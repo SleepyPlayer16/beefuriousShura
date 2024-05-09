@@ -1,0 +1,1 @@
+El juego usa la versión de Godot 4.2.1, así que recomiendo utilizar esa versión para abrir el juego, quizás se puedan usar versiones nuevas pero no aseguro que el juego vaya a funcionar correctamente en ellas.
