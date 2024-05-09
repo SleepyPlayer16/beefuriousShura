@@ -1,0 +1,6 @@
+[
+	{"CharacterLeft":"Shura", "CharacterRight":"Condesa"},
+	{"Name":"Shura", "SecondaryName": "","Text":"¡Condesa!", "Emotion": "Happy", "Side": "Left"},
+	{"Name":"Condesa", "SecondaryName": "","Text":"Shura, ¿Quién es a la que le acabas de dar follow en tu Instagram?! >:(", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Shura", "SecondaryName": "","Text":"Ahh... Este ehhh... Jeje t-tengo que irme nos vemos luego!!!", "Emotion": "Rock", "Side": "Left"},
+]

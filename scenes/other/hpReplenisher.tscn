@@ -1,0 +1,107 @@
+[gd_scene load_steps=15 format=3 uid="uid://cgctnk60uu7a0"]
+
+[ext_resource type="Texture2D" uid="uid://dwtg0y6gy2prf" path="res://sprites/other/spr_HP.png" id="1_blb4q"]
+[ext_resource type="Script" path="res://scripts/hpReplenisher.gd" id="1_iha1y"]
+[ext_resource type="Texture2D" uid="uid://brif2sd4jhdv0" path="res://sprites/other/replenisher/frame.png" id="3_mifcp"]
+[ext_resource type="Texture2D" uid="uid://cndp1m7culro4" path="res://sprites/other/replenisher/frame2.png" id="4_edavk"]
+[ext_resource type="Texture2D" uid="uid://7t0y06sinc2c" path="res://sprites/other/replenisher/frame3.png" id="5_pmekp"]
+[ext_resource type="Texture2D" uid="uid://bi1vpds3dxbyn" path="res://sprites/other/replenisher/frame4.png" id="6_xo6eq"]
+[ext_resource type="AudioStream" uid="uid://nlsi064ydr3s" path="res://sounds/sfx_replenishPickup.ogg" id="7_aus6l"]
+[ext_resource type="AudioStream" uid="uid://b6vmoo4aioriq" path="res://sounds/sfx_hpReplenish.wav" id="8_fw7bq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpasw"]
+size = Vector2(6, 4)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4dieh"]
+radius = 17.0294
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_inbnd"]
+frames = 4
+speed_scale = 8.0
+frame_0/texture = ExtResource("3_mifcp")
+frame_1/texture = ExtResource("4_edavk")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("5_pmekp")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("6_xo6eq")
+frame_3/duration = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk6co"]
+atlas = ExtResource("1_blb4q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq477"]
+atlas = ExtResource("1_blb4q")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3aosy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sk6co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aq477")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}]
+
+[node name="hpReplenisher" type="CharacterBody2D"]
+collision_layer = 256
+collision_mask = 256
+script = ExtResource("1_iha1y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_fpasw")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_4dieh")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 16
+lifetime = 0.5
+one_shot = true
+speed_scale = 0.7
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+texture = SubResource("AnimatedTexture_inbnd")
+direction = Vector2(1, -90)
+spread = 180.0
+gravity = Vector2(0, 200)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+hue_variation_max = 0.83
+
+[node name="kachin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_aus6l")
+volume_db = -4.0
+bus = &"Sound"
+
+[node name="hp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_fw7bq")
+volume_db = 2.0
+bus = &"Sound"
+
+[node name="hpReplenisher" type="AnimatedSprite2D" parent="."]
+z_index = 101
+sprite_frames = SubResource("SpriteFrames_3aosy")
+autoplay = "default"
+frame_progress = 0.559605
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,9 @@
+[
+	{"CharacterLeft":"Shura", "CharacterRight":"Shroo"},
+	{"Name":"Shroo", "SecondaryName": "","Text":"¡Hola!", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Shroo", "SecondaryName": "","Text":"¿Miraste a esa abeja gigante que pasó por aquí?", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Shroo", "SecondaryName": "","Text":"¡Que miedo! Y parece que se está llevando a una criatura con ella!", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Shura", "SecondaryName": "","Text":"Justo busco a esa abeja. ¿Sabes a donde se fue?", "Emotion": "Normal", "Side": "Left"},
+	{"Name":"Shroo", "SecondaryName": "","Text":"La verdad no, ¡Me asusté y salí corriendo hasta aquí!", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Shura", "SecondaryName": "","Text":"Ya veo... Gracias igualmente.", "Emotion": "Normal", "Side": "Left"},
+]

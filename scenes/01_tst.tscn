@@ -1,0 +1,270 @@
+[gd_scene load_steps=15 format=3 uid="uid://c2d2vmwf3lxp6"]
+
+[ext_resource type="PackedScene" uid="uid://c3kj77t5knhwo" path="res://scenes/testBlock.tscn" id="1_41aum"]
+[ext_resource type="PackedScene" uid="uid://wsdgt3vitjlt" path="res://scenes/player.tscn" id="2_7rv35"]
+[ext_resource type="TileSet" uid="uid://8gjvsph6efka" path="res://tiles/level1.tres" id="3_mbpal"]
+[ext_resource type="TileSet" uid="uid://chnhnnnjbu7j" path="res://tiles/level2.tres" id="4_asog5"]
+[ext_resource type="PackedScene" uid="uid://bkrrmx2twhic1" path="res://scenes/obstacles/blastZone.tscn" id="4_o5olx"]
+[ext_resource type="TileSet" uid="uid://c8ue1phjlr1x1" path="res://tiles/level3.tres" id="5_4ks7k"]
+[ext_resource type="AudioStream" uid="uid://ct887hdftx5q2" path="res://music/mus_highTension.ogg" id="5_5o4a0"]
+[ext_resource type="PackedScene" uid="uid://2732uol80c00" path="res://scenes/FX/thunder.tscn" id="5_segbx"]
+[ext_resource type="PackedScene" uid="uid://cxp8y2oegmtg0" path="res://scenes/other/checkpoint.tscn" id="8_pirwv"]
+[ext_resource type="PackedScene" uid="uid://dx7cvp3lvbh8e" path="res://scenes/other/energyReplenisher.tscn" id="9_o4ekb"]
+[ext_resource type="Texture2D" uid="uid://ddx1i100k11ds" path="res://sprites/other/rakerumo.png" id="11_iqobw"]
+[ext_resource type="PackedScene" uid="uid://da0d3uj5bvhea" path="res://scenes/obstacles/FallingBlocks.tscn" id="12_olnui"]
+[ext_resource type="PackedScene" uid="uid://msg3vpadbe3l" path="res://scenes/boss_attacks/beeBomb.tscn" id="13_uta0u"]
+[ext_resource type="PackedScene" uid="uid://cgctnk60uu7a0" path="res://scenes/other/hpReplenisher.tscn" id="14_7lug5"]
+
+[node name="01_tst" type="Node2D"]
+scale = Vector2(1.00265, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Thunderrrr" type="ParallaxBackground" parent="CanvasLayer"]
+layer = -99
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Thunderrrr"]
+visibility_layer = 2
+z_index = -102
+offset_left = -4023.63
+offset_top = -3060.0
+offset_right = 7458.37
+offset_bottom = 5998.0
+color = Color(0, 0, 0, 1)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/Thunderrrr"]
+light_mask = 2
+motion_scale = Vector2(0.1, 0.05)
+motion_mirroring = Vector2(480, 0)
+
+[node name="thunder" parent="CanvasLayer/Thunderrrr/ParallaxLayer" instance=ExtResource("5_segbx")]
+position = Vector2(240, 64)
+
+[node name="testBlock" parent="." instance=ExtResource("1_41aum")]
+position = Vector2(83, 274)
+scale = Vector2(19.247, 4.44444)
+collision_layer = 3
+collision_mask = 3
+
+[node name="testBlock2" parent="." instance=ExtResource("1_41aum")]
+position = Vector2(472, 7.99999)
+scale = Vector2(2.026, 4.44444)
+collision_layer = 3
+collision_mask = 3
+
+[node name="testBlock3" parent="." instance=ExtResource("1_41aum")]
+position = Vector2(620, 210)
+scale = Vector2(2.026, 4.44444)
+collision_layer = 3
+collision_mask = 3
+
+[node name="testBlock4" parent="." instance=ExtResource("1_41aum")]
+position = Vector2(771.955, 157)
+scale = Vector2(2.026, 4.44444)
+collision_layer = 3
+collision_mask = 3
+
+[node name="testBlock5" parent="." instance=ExtResource("1_41aum")]
+position = Vector2(672.233, 97.9263)
+rotation = 1.5708
+scale = Vector2(0.4641, 3.55309)
+collision_layer = 3
+collision_mask = 3
+
+[node name="player" parent="." instance=ExtResource("2_7rv35")]
+position = Vector2(337, 69)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("3_mbpal")
+format = 2
+layer_0/tile_data = PackedInt32Array(131105, 327680, 0, 196641, 327680, 1, 262177, 327680, 2, 131106, 393216, 0, 196642, 393216, 1, 262178, 393216, 2, -65496, 327680, 0, 40, 327680, 1, 65576, 327680, 2, -65495, 393216, 0, 41, 393216, 1, 65577, 393216, 2, 196639, 458752, 1, 262175, 458752, 2, 196635, 458752, 1, 262171, 458752, 2, 38, 458752, 1, 65574, 458752, 2, 262172, 524288, 1, 262174, 131072, 0, 65575, 131072, 0)
+layer_1/name = ""
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(262171, 0, 0, 262172, 0, 0, 262173, 0, 0, 262174, 0, 0, 262175, 0, 0, 262176, 0, 0, 262177, 0, 0, 262178, 0, 0, 65575, 0, 0, 65576, 0, 0, 65577, 0, 0, 65578, 0, 0, 65574, 0, 0)
+layer_2/name = ""
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array(327707, 0, 1, 327708, 65536, 1, 327709, 65536, 1, 327710, 65536, 1, 327711, 65536, 1, 327712, 65536, 1, 327713, 65536, 1, 327714, 65536, 1, 262179, 196608, 1, 196644, 196608, 1, 131109, 196608, 1, 262180, 196608, 2, 196645, 196608, 2, 131110, 65536, 1, 131111, 65536, 1, 131112, 65536, 1, 131113, 65536, 1, 131114, 65536, 1, 262181, 65536, 2, 327715, 196608, 2, 327716, 65536, 2, 327717, 65536, 2, 327718, 65536, 2, 262182, 65536, 2, 196646, 65536, 2, 196647, 65536, 2, 196648, 65536, 2, 196649, 65536, 2, 196650, 65536, 2, 262186, 65536, 2, 327722, 65536, 2, 327721, 65536, 2, 327720, 65536, 2, 327719, 65536, 2, 262183, 65536, 2, 262184, 65536, 2, 262185, 65536, 2, 65576, 393216, 3, 65577, 393216, 3, 65578, 393216, 3, 42, 393216, 3, 41, 393216, 3, -65494, 393216, 3, -262127, 393216, 3, -262128, 393216, 3, -327664, 393216, 3, -393201, 393216, 3, -327665, 393216, 3, -393202, 393216, 3, -458738, 393216, 3, -327666, 393216, 3, -262130, 393216, 3, -262129, 393216, 3, -196593, 393216, 3, -196594, 393216, 3, -458737, 393216, 3, -524273, 393216, 3, -524274, 393216, 3)
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = ExtResource("4_asog5")
+cell_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(-196572, 393216, 4, -196571, 458752, 4, -196570, 524288, 4, -196577, 393216, 4, -196576, 458752, 4, -196575, 524288, 4, -196582, 393216, 4, -196581, 458752, 4, -196580, 524288, 4, -196587, 393216, 4, -196586, 458752, 4, -196585, 524288, 4, -196592, 393216, 4, -196591, 458752, 4, -196590, 524288, 4, -524267, 393216, 4, -524266, 458752, 4, -524265, 524288, 4, -589800, 393216, 4, -589799, 458752, 4, -589798, 524288, 4, -655333, 393216, 4, -655332, 458752, 4, -655331, 524288, 4, -720866, 393216, 4, -720865, 458752, 4, -720864, 524288, 4, -655327, 393216, 4, -655326, 458752, 4, -655325, 524288, 4, -589788, 393216, 4, -589787, 458752, 4, -589786, 524288, 4, -524249, 393216, 4, -524248, 458752, 4, -524247, 524288, 4, -524246, 393216, 4, -524245, 458752, 4, -524244, 524288, 4, -720854, 0, 1, -655318, 0, 2, -589782, 0, 3, -720853, 65536, 1, -655317, 65536, 2, -589781, 65536, 3, -720852, 131072, 1, -655316, 131072, 2, -589780, 131072, 3, -983002, 262144, 2, -917466, 0, 2, -851930, 0, 3, -983001, 65536, 1, -917465, 65536, 2, -851929, 65536, 3, -983000, 131072, 1, -917464, 131072, 2, -851928, 131072, 3, -1048538, 262144, 1, -1114075, 262144, 1, -1048539, 262144, 2, -1179612, 262144, 1, -1114076, 262144, 2, -1245149, 262144, 1, -1179613, 262144, 2, -1310686, 262144, 1, -1245150, 262144, 2, -1310687, 65536, 1, -1310688, 65536, 1, -1310689, 196608, 1, -1245153, 196608, 2, -1245154, 196608, 1, -1179618, 196608, 2, -1179619, 65536, 1, -1179620, 65536, 1, -1114084, 65536, 1, -1245157, 262144, 1, -1179621, 262144, 2, -1310694, 262144, 1, -1245158, 262144, 2, -1310695, 65536, 1, -1310696, 65536, 1, -1310697, 65536, 1, -1310698, 65536, 1, -1310699, 65536, 1, -1310700, 65536, 1, -1310701, 65536, 1, -1310702, 65536, 1, -1310703, 65536, 1, -1310704, 65536, 1)
+
+[node name="TileMap3" type="TileMap" parent="."]
+tile_set = ExtResource("5_4ks7k")
+cell_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(-1245173, 393216, 4, -1245172, 458752, 4, -1245171, 524288, 4, -786426, 393216, 4, -786425, 458752, 4, -786424, 524288, 4, -1048574, 393216, 4, -1048573, 458752, 4, -1048572, 524288, 4, -983043, 393216, 4, -983042, 458752, 4, -983041, 524288, 4, -1114118, 0, 1, -1048582, 0, 2, -1114117, 65536, 1, -1048581, 65536, 2, -983046, 0, 2, -917510, 0, 2, -983045, 65536, 2, -917509, 65536, 2, -851974, 0, 2, -786438, 0, 2, -851973, 65536, 2, -786437, 65536, 2, -720902, 0, 2, -655366, 0, 2, -720901, 65536, 2, -655365, 65536, 2, -589830, 0, 2, -524294, 0, 2, -589829, 65536, 2, -524293, 65536, 2, -458758, 0, 2, -393222, 0, 2, -458757, 65536, 2, -393221, 65536, 2, -327686, 0, 2, -327685, 65536, 2, -262150, 0, 2, -262149, 65536, 2, -196614, 0, 2, -196613, 65536, 2, -131078, 0, 2, -131077, 65536, 2, -65542, 0, 2, -65541, 65536, 2, -6, 0, 2, -5, 65536, 2, 65530, 0, 2, 65531, 65536, 2, 131066, 0, 2, 131067, 65536, 2, 196602, 0, 2, 196603, 65536, 2, 262138, 0, 2, 262139, 65536, 2, 327674, 0, 2, 327675, 65536, 2, 393210, 0, 2, 393211, 65536, 2, 458746, 0, 2, 458747, 65536, 2, 524282, 0, 2, 524283, 65536, 2, 589818, 0, 2, 589819, 65536, 2, 589820, 65536, 1, 589821, 131072, 1)
+
+[node name="blastZone" parent="." instance=ExtResource("4_o5olx")]
+position = Vector2(-3569.54, 431)
+scale = Vector2(249.869, 13.8438)
+
+[node name="blastZone2" parent="." instance=ExtResource("4_o5olx")]
+position = Vector2(-148.541, -1906.8)
+rotation = 1.57079
+scale = Vector2(249.869, 13.8438)
+
+[node name="blastZone3" parent="." instance=ExtResource("4_o5olx")]
+position = Vector2(1889.39, -1906.8)
+rotation = 1.57079
+scale = Vector2(249.869, 13.8438)
+
+[node name="blastZone4" parent="." instance=ExtResource("4_o5olx")]
+position = Vector2(265.297, 160)
+damageType = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5o4a0")
+volume_db = -13.419
+
+[node name="checkpoint" parent="." instance=ExtResource("8_pirwv")]
+position = Vector2(788.909, 118)
+
+[node name="checkpoint2" parent="." instance=ExtResource("8_pirwv")]
+position = Vector2(1227.75, 22)
+
+[node name="checkpoint3" parent="." instance=ExtResource("8_pirwv")]
+position = Vector2(1181.87, -129)
+
+[node name="checkpoint4" parent="." instance=ExtResource("8_pirwv")]
+position = Vector2(861.716, -122)
+
+[node name="checkpoint5" parent="." instance=ExtResource("8_pirwv")]
+position = Vector2(680.198, -134)
+
+[node name="checkpoint6" parent="." instance=ExtResource("8_pirwv")]
+position = Vector2(993.367, -394)
+
+[node name="checkpoint7" parent="." instance=ExtResource("8_pirwv")]
+position = Vector2(1168.9, -332)
+
+[node name="checkpoint8" parent="." instance=ExtResource("8_pirwv")]
+position = Vector2(1366.38, -397)
+
+[node name="checkpoint9" parent="." instance=ExtResource("8_pirwv")]
+position = Vector2(1186.85, -569)
+
+[node name="checkpoint10" parent="." instance=ExtResource("8_pirwv")]
+position = Vector2(1144.97, -606)
+
+[node name="checkpoint11" parent="." instance=ExtResource("8_pirwv")]
+position = Vector2(1086.12, -661)
+
+[node name="checkpoint12" parent="." instance=ExtResource("8_pirwv")]
+position = Vector2(998.354, -655)
+
+[node name="checkpoint13" parent="." instance=ExtResource("8_pirwv")]
+position = Vector2(926.545, -618)
+
+[node name="checkpoint14" parent="." instance=ExtResource("8_pirwv")]
+position = Vector2(798.883, -669)
+
+[node name="energyReplenisher" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(680.198, 191)
+
+[node name="energyReplenisher2" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(937.516, 146)
+
+[node name="energyReplenisher3" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(1167.91, 98)
+
+[node name="energyReplenisher4" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(1307.54, -98)
+
+[node name="energyReplenisher5" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(1032.26, -112)
+
+[node name="energyReplenisher6" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(612.377, -171)
+
+[node name="energyReplenisher7" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(611.38, -227)
+
+[node name="energyReplenisher8" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(612.377, -280)
+
+[node name="energyReplenisher9" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(815.838, -339)
+
+[node name="energyReplenisher10" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(1344.44, -408)
+
+[node name="energyReplenisher11" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(1179.87, -565)
+
+[node name="energyReplenisher12" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(1137.98, -606)
+
+[node name="energyReplenisher13" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(971.426, -616)
+
+[node name="energyReplenisher14" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(876.677, -602)
+
+[node name="energyReplenisher15" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(307.186, -647)
+
+[node name="energyReplenisher16" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(272.278, -644)
+
+[node name="energyReplenisher17" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(244.352, -619)
+
+[node name="energyReplenisher18" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(226.4, -592)
+
+[node name="energyReplenisher19" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(205.456, -562)
+
+[node name="energyReplenisher20" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(177.53, -549)
+
+[node name="energyReplenisher21" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(143.619, -541)
+
+[node name="energyReplenisher22" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(143.619, -541)
+
+[node name="energyReplenisher23" parent="." instance=ExtResource("9_o4ekb")]
+position = Vector2(-115.693, -290)
+
+[node name="Rakerumo" type="Sprite2D" parent="."]
+position = Vector2(1301.55, 16)
+texture = ExtResource("11_iqobw")
+
+[node name="FallingBlocks" parent="." instance=ExtResource("12_olnui")]
+position = Vector2(71.8097, 280)
+
+[node name="FallingBlocks2" parent="." instance=ExtResource("12_olnui")]
+position = Vector2(39.8943, 280)
+
+[node name="FallingBlocks3" parent="." instance=ExtResource("12_olnui")]
+position = Vector2(7.97886, 280)
+
+[node name="FallingBlocks4" parent="." instance=ExtResource("12_olnui")]
+position = Vector2(-23.9366, 280)
+
+[node name="FallingBlocks5" parent="." instance=ExtResource("12_olnui")]
+position = Vector2(-55.852, 280)
+
+[node name="beeBomb" parent="." instance=ExtResource("13_uta0u")]
+position = Vector2(414.9, 104)
+
+[node name="hpReplenisher" parent="." instance=ExtResource("14_7lug5")]
+position = Vector2(646.287, 72)
+
+[node name="hpReplenisher2" parent="." instance=ExtResource("14_7lug5")]
+position = Vector2(614.372, 72)
+
+[node name="hpReplenisher3" parent="." instance=ExtResource("14_7lug5")]
+position = Vector2(582.456, 72)

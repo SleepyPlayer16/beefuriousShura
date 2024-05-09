@@ -1,0 +1,98 @@
+[gd_scene load_steps=15 format=3 uid="uid://bb1inx2ebyp0u"]
+
+[ext_resource type="Script" path="res://scripts/eruLightningStrike.gd" id="1_no3r4"]
+[ext_resource type="Texture2D" uid="uid://itwcvqklg6du" path="res://sprites/eru/spr_eruLightning.png" id="2_1lq22"]
+[ext_resource type="AudioStream" uid="uid://votwu5txkqh" path="res://sounds/sfx_thunder.wav" id="3_arphy"]
+[ext_resource type="Texture2D" uid="uid://c2vfnyr8vntbo" path="res://sprites/eru/spr_lightningStrike.png" id="4_niyog"]
+[ext_resource type="AudioStream" uid="uid://8wd36787n1b4" path="res://sounds/sfx_electricity.wav" id="5_1ykyo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iayqm"]
+radius = 24.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpd85"]
+atlas = ExtResource("4_niyog")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ba14d"]
+atlas = ExtResource("4_niyog")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msjqv"]
+atlas = ExtResource("4_niyog")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucuyg"]
+atlas = ExtResource("4_niyog")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hwtp"]
+atlas = ExtResource("4_niyog")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yccfy"]
+atlas = ExtResource("4_niyog")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkada"]
+atlas = ExtResource("4_niyog")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjk6y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpd85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ba14d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msjqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucuyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hwtp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yccfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkada")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="eruLightningStrike" type="Node2D"]
+visible = false
+script = ExtResource("1_no3r4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, -160)
+texture = ExtResource("2_1lq22")
+
+[node name="lightning" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lightning"]
+shape = SubResource("CircleShape2D_iayqm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 3)
+sprite_frames = SubResource("SpriteFrames_xjk6y")
+autoplay = "default"
+frame = 6
+frame_progress = 1.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_arphy")
+volume_db = -3.0
+bus = &"Sound"
+
+[node name="Electricity" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_1ykyo")
+bus = &"Sound"
+
+[connection signal="area_entered" from="lightning" to="." method="_on_lightning_area_entered"]

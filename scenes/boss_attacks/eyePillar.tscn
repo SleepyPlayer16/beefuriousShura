@@ -1,0 +1,116 @@
+[gd_scene load_steps=15 format=3 uid="uid://cvjfxemtdg1c8"]
+
+[ext_resource type="Script" path="res://scripts/eyePillar.gd" id="1_1srvp"]
+[ext_resource type="Texture2D" uid="uid://txc7owo45eur" path="res://sprites/caramel/phase2/spr_pillarAppear.png" id="1_gy2qh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qm5ef"]
+atlas = ExtResource("1_gy2qh")
+region = Rect2(68, 0, 17, 161)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6xws"]
+atlas = ExtResource("1_gy2qh")
+region = Rect2(51, 0, 17, 161)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4o0g"]
+atlas = ExtResource("1_gy2qh")
+region = Rect2(34, 0, 17, 161)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdoyb"]
+atlas = ExtResource("1_gy2qh")
+region = Rect2(17, 0, 17, 161)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77jtv"]
+atlas = ExtResource("1_gy2qh")
+region = Rect2(0, 0, 17, 161)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2e23f"]
+atlas = ExtResource("1_gy2qh")
+region = Rect2(0, 0, 17, 161)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7cis"]
+atlas = ExtResource("1_gy2qh")
+region = Rect2(17, 0, 17, 161)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lurv"]
+atlas = ExtResource("1_gy2qh")
+region = Rect2(34, 0, 17, 161)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2aiso"]
+atlas = ExtResource("1_gy2qh")
+region = Rect2(51, 0, 17, 161)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxuvl"]
+atlas = ExtResource("1_gy2qh")
+region = Rect2(68, 0, 17, 161)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ohj7h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qm5ef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6xws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4o0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdoyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77jtv")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"Despawn",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2e23f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7cis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lurv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2aiso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxuvl")
+}],
+"loop": false,
+"name": &"Spawn",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wxc7"]
+size = Vector2(20, 162)
+
+[node name="eyePillar" type="StaticBody2D"]
+script = ExtResource("1_1srvp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -80.5)
+sprite_frames = SubResource("SpriteFrames_ohj7h")
+animation = &"Spawn"
+autoplay = "Spawn"
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -80.5)
+shape = SubResource("RectangleShape2D_0wxc7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+autostart = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

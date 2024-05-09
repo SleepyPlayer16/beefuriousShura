@@ -1,0 +1,447 @@
+[gd_scene load_steps=22 format=3 uid="uid://cthe8w1euken8"]
+
+[ext_resource type="Script" path="res://scripts/endCutscene.gd" id="1_06qju"]
+[ext_resource type="Texture2D" uid="uid://byjts6e67tadc" path="res://sprites/levels/3/spr_hiveExplosion.png" id="1_tb2ea"]
+[ext_resource type="AudioStream" uid="uid://crlftjjgtcrym" path="res://sounds/sfx_hiveExplosion.ogg" id="3_mgof2"]
+[ext_resource type="Texture2D" uid="uid://1arn007ug6qj" path="res://sprites/endCutscene/spr_endCutscene_1.png" id="4_h0cg5"]
+[ext_resource type="Texture2D" uid="uid://dq5b6dgjgr32i" path="res://sprites/endCutscene/spr_endCutscene_2.png" id="5_knr3p"]
+[ext_resource type="Texture2D" uid="uid://bl2xdideaixus" path="res://sprites/endCutscene/spr_endCutscene_3.png" id="6_cullo"]
+[ext_resource type="Texture2D" uid="uid://y0323rw2krxe" path="res://sprites/endCutscene/spr_endCutscene_4.png" id="7_vxkm6"]
+[ext_resource type="FontFile" uid="uid://bhhdifxwdyq0" path="res://fonts/DigitalDisco.ttf" id="7_wwkwn"]
+[ext_resource type="AudioStream" uid="uid://bij6e648i3upu" path="res://music/mus_departure.ogg" id="9_iqxwv"]
+[ext_resource type="Texture2D" uid="uid://utem0hf0voof" path="res://sprites/other/spr_sToSkip.png" id="10_bor5p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu8ih"]
+atlas = ExtResource("4_h0cg5")
+region = Rect2(0, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdtoq"]
+atlas = ExtResource("5_knr3p")
+region = Rect2(0, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2rin"]
+atlas = ExtResource("6_cullo")
+region = Rect2(0, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fawy"]
+atlas = ExtResource("7_vxkm6")
+region = Rect2(0, 0, 480, 270)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8lg48"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu8ih")
+}],
+"loop": false,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdtoq")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2rin")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fawy")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_3yhsi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Black2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("White:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Explosion:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Explosion:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SprHiveExplosion:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_dp8hu"]
+resource_name = "scene_01"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Black2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("White:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(4, 5.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Explosion:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Explosion:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(2.1, 5.1),
+"transitions": PackedFloat32Array(8, 11.3137),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SprHiveExplosion:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jrs1r"]
+_data = {
+"RESET": SubResource("Animation_3yhsi"),
+"scene_01": SubResource("Animation_dp8hu")
+}
+
+[sub_resource type="Animation" id="Animation_31w27"]
+resource_name = "0"
+length = 130.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogueBG:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.2, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SprEndCutscene:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.6, 11.3, 15.9, 20.1, 25.2, 29.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"0", &"1", &"2", &"1", &"1", &"2", &"3"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DialogueBG/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.2, 6.8, 11.3, 15.9, 20.1, 25.2, 29.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["[center][color=pink]Shura:[/color] Se acabó... [/center]", "[center][color=pink]Shura:[/color] Pensaba que ya no volvería a verte... [/center]", "[center][color=pink]Shura:[/color] ¡Me alegra que no te haya pasado nada! [/center]", "[center][color=pink]Shura:[/color] La verdad no tengo idea de como hice todo eso...[/center]", "[center][color=pink]Shura:[/color] ¡Aunque no lo habría logrado sin la ayuda de las demás![/center]", "[center][color=pink]Shura:[/color] ¿Volvemos a casa?[/center]", "[center][color=yellow]Pantcake:[/color] S-sí...[/center]"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Black2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(31.8, 35.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("White:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DialogueBG:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SprEndCutscene:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_iw5xj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogueBG:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DialogueBG/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["[center][color=pink]Shura:[/color] Se acabó... [/center]"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Black2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("White:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DialogueBG:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u1wgb"]
+_data = {
+"0": SubResource("Animation_31w27"),
+"RESET": SubResource("Animation_iw5xj")
+}
+
+[node name="endCutscene" type="Node2D"]
+script = ExtResource("1_06qju")
+
+[node name="Black" type="ColorRect" parent="."]
+offset_left = -176.0
+offset_top = -112.0
+offset_right = 1136.0
+offset_bottom = 664.0
+color = Color(0, 0, 0, 1)
+
+[node name="SprHiveExplosion" type="Sprite2D" parent="."]
+position = Vector2(480, 272)
+scale = Vector2(2, 2)
+texture = ExtResource("1_tb2ea")
+offset = Vector2(0, -1)
+
+[node name="SprEndCutscene" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(480, 272)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_8lg48")
+animation = &"0"
+autoplay = "0"
+offset = Vector2(0, -1)
+
+[node name="DialogueBG" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -8.0
+offset_top = 456.0
+offset_right = 968.0
+offset_bottom = 512.0
+color = Color(0.117647, 0.054902, 0.223529, 0.701961)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueBG"]
+layout_mode = 0
+offset_top = 14.0
+offset_right = 976.0
+offset_bottom = 70.0
+theme_override_fonts/normal_font = ExtResource("7_wwkwn")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center][color=pink]Shura:[/color] Se acabó... [/center]"
+
+[node name="White" type="ColorRect" parent="."]
+offset_left = -176.0
+offset_top = -112.0
+offset_right = 1136.0
+offset_bottom = 664.0
+color = Color(1, 1, 1, 0)
+
+[node name="Black2" type="ColorRect" parent="."]
+offset_left = -176.0
+offset_top = -112.0
+offset_right = 1136.0
+offset_bottom = 664.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jrs1r")
+}
+autoplay = "scene_01"
+
+[node name="Explosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mgof2")
+pitch_scale = 0.76
+bus = &"Sound"
+
+[node name="EndCutscene2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u1wgb")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_iqxwv")
+bus = &"Music"
+
+[node name="SkipColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = 999
+offset_left = -184.0
+offset_top = -152.0
+offset_right = 1144.0
+offset_bottom = 668.0
+color = Color(0, 0, 0, 1)
+
+[node name="SprSToSkip" type="Sprite2D" parent="."]
+position = Vector2(664, 512)
+scale = Vector2(2, 2)
+texture = ExtResource("10_bor5p")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

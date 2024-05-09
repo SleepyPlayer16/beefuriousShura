@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi6y4n5oag8go"]
+
+[ext_resource type="Texture2D" uid="uid://byfk3mthpdlb" path="res://sprites/other/spr_doorIndicator.png" id="1_5dkyi"]
+[ext_resource type="Script" path="res://scripts/insideTeleport.gd" id="1_u8n3t"]
+[ext_resource type="AudioStream" uid="uid://375odg88efgs" path="res://sounds/sfx_openDoor.wav" id="3_0jqmy"]
+
+[node name="insideTeleport" type="Node2D"]
+script = ExtResource("1_u8n3t")
+
+[node name="SprDoorIndicator" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.443137)
+texture = ExtResource("1_5dkyi")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0jqmy")
+volume_db = -4.0
+pitch_scale = 0.97
+bus = &"Sound"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -48.0
+offset_top = -32.0
+offset_right = 1024.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.8
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

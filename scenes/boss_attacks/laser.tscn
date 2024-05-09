@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://bh1gksii2jwnt"]
+
+[ext_resource type="Texture2D" uid="uid://b346h1s5i41vq" path="res://sprites/caramel/phase2/spr_laser.png" id="1_cyjgs"]
+[ext_resource type="Script" path="res://scripts/laser.gd" id="1_ibknk"]
+[ext_resource type="PackedScene" uid="uid://bkrrmx2twhic1" path="res://scenes/obstacles/blastZone.tscn" id="3_nu5rg"]
+[ext_resource type="AudioStream" uid="uid://cwl4i1elj7d1p" path="res://sounds/sfx_laserShoot.wav" id="4_n8ufp"]
+[ext_resource type="AudioStream" uid="uid://cgtm7w08agsp0" path="res://sounds/sfx_warningSound.wav" id="5_xkpsy"]
+
+[node name="Lazurr" type="Node2D"]
+z_index = 201
+script = ExtResource("1_ibknk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cyjgs")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="blastZone" parent="." instance=ExtResource("3_nu5rg")]
+visible = false
+position = Vector2(-7, -2)
+scale = Vector2(0.4375, 0.125)
+damage = 1
+damageType = 1
+
+[node name="LaserPew" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_n8ufp")
+volume_db = 5.0
+pitch_scale = 1.35
+autoplay = true
+max_distance = 1000.0
+bus = &"Sound"
+
+[node name="LaserPew2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_xkpsy")
+volume_db = 5.0
+pitch_scale = 3.0
+max_distance = 1000.0
+bus = &"Sound"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

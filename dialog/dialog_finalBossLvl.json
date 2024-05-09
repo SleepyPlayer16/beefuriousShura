@@ -1,0 +1,96 @@
+[
+  { "CharacterLeft": "Shura", "CharacterRight": "Caramel" },
+  {
+	"Name": "Caramel",
+	"SecondaryName": "",
+	"Text": "... Así que has llegado.",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "¡Devuelveme a mi Pantcake ahora mismo!",
+	"Emotion": "Angry",
+	"Side": "Left"
+  },
+  {
+	"Name": "Caramel",
+	"SecondaryName": "",
+	"Text": "¡Por supuesto, toma, todo tuyo!",
+	"Emotion": "Crazy",
+	"Side": "Right"
+  },
+  {
+	"Name": "Caramel",
+	"SecondaryName": "TriggerAnimationEvent",
+	"Text": "",
+	"Emotion": "Crazy",
+	"Side": "Right"
+  },
+  {
+	"Name": "Caramel",
+	"SecondaryName": "",
+	"Text": "Es lo que diría si te lo fuera a devolver. ¿Me crees tonta o qué?",
+	"Emotion": "Angry",
+	"Side": "Right"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "Pues...",
+	"Emotion": "Cringe",
+	"Side": "Left"
+  },
+  {
+	"Name": "Caramel",
+	"SecondaryName": "",
+	"Text": "Estoy 99% segura que esa cosa que llamas ''Pantcake'' es en realidad una abeja.",
+	"Emotion": "Confident",
+	"Side": "Right"
+  },
+  {
+	"Name": "Caramel",
+	"SecondaryName": "",
+	"Text": "¡La miel sobre su casco me lo confirma!",
+	"Emotion": "Confident",
+	"Side": "Right"
+  },
+
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "...",
+	"Emotion": "Cringe",
+	"Side": "Left"
+  },
+  {
+	"Name": "Caramel",
+	"SecondaryName": "",
+	"Text": "...",
+	"Emotion": "Confident",
+	"Side": "Right"
+  },
+  {
+	"Name": "Caramel",
+	"SecondaryName": "",
+	"Text": "¡¡¡Me estoy quedando sin trabajadores, ¿De acuerdo? De algún lado tenía que conseguir más!!!",
+	"Emotion": "Angry",
+	"Side": "Right"
+  },
+  {
+	"Name": "Caramel",
+	"SecondaryName": "",
+	"Text": "¡Agh, Suficiente! ¡Si tanto lo quieres de vuelta, entonces pelea por el!",
+	"Emotion": "Confident",
+	"Side": "Right"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "Con mucho gusto.",
+	"Emotion": "Angry",
+	"Side": "Left"
+  }
+]
+

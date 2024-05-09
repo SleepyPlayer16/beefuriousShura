@@ -1,0 +1,296 @@
+[gd_scene load_steps=19 format=3 uid="uid://bi14m1mfg6m70"]
+
+[ext_resource type="FontFile" uid="uid://bhhdifxwdyq0" path="res://fonts/DigitalDisco.ttf" id="1_5oht7"]
+[ext_resource type="Script" path="res://scripts/Credits.gd" id="1_j3v0e"]
+[ext_resource type="Texture2D" uid="uid://dcbudc4egwyxh" path="res://sprites/credits/spr_creditsBack.png" id="2_cetuk"]
+[ext_resource type="Texture2D" uid="uid://b0riesnstfc3w" path="res://sprites/levels/1/back.png" id="4_qqxpc"]
+[ext_resource type="Texture2D" uid="uid://cg3uxpfweb45g" path="res://sprites/levels/1/mountains.png" id="5_pj5a4"]
+[ext_resource type="Texture2D" uid="uid://i1f5k5tqgetu" path="res://sprites/credits/spr_groundBack.png" id="6_57ghx"]
+[ext_resource type="Texture2D" uid="uid://bhqbm6un5kt3x" path="res://sprites/levels/1/back2.png" id="6_mgxnq"]
+[ext_resource type="Texture2D" uid="uid://dfxee50reno7t" path="res://sprites/levels/1/back3.png" id="7_5eutd"]
+[ext_resource type="Texture2D" uid="uid://di32b7mscjr1w" path="res://sprites/credits/spr_chuwaCredits.png" id="7_hs8lx"]
+[ext_resource type="Texture2D" uid="uid://0ilcv5opjfyl" path="res://sprites/credits/spr_pantcakesCredits.png" id="7_y7bu4"]
+[ext_resource type="Texture2D" uid="uid://utem0hf0voof" path="res://sprites/other/spr_sToSkip.png" id="11_b4qja"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1w56"]
+atlas = ExtResource("7_y7bu4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8rwk"]
+atlas = ExtResource("7_y7bu4")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo646"]
+atlas = ExtResource("7_y7bu4")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5dqw"]
+atlas = ExtResource("7_hs8lx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gxdj"]
+atlas = ExtResource("7_hs8lx")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8m3q"]
+atlas = ExtResource("7_hs8lx")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1wbsp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1w56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8rwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo646")
+}],
+"loop": true,
+"name": &"Pantcakes",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5dqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gxdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8m3q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_j3v0e")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="Back" type="Sprite2D" parent="CanvasLayer/ParallaxBackground"]
+position = Vector2(768, 270)
+scale = Vector2(2, 2)
+texture = ExtResource("4_qqxpc")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/ParallaxBackground"]
+visible = false
+offset_right = 1016.0
+offset_bottom = 624.0
+color = Color(0.223529, 0.792157, 0.87451, 1)
+
+[node name="ParallaxBackground4" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground4"]
+motion_scale = Vector2(0.05, 0.03)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Back3" type="Sprite2D" parent="CanvasLayer/ParallaxBackground4/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(480, 968)
+scale = Vector2(2, 2)
+texture = ExtResource("5_pj5a4")
+region_enabled = true
+region_rect = Rect2(0, 0, 960, 1080)
+
+[node name="ParallaxBackground3" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground3"]
+motion_scale = Vector2(0.2, 0.1)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Back3" type="Sprite2D" parent="CanvasLayer/ParallaxBackground3/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(480, 1160)
+scale = Vector2(2, 2)
+texture = ExtResource("6_mgxnq")
+region_enabled = true
+region_rect = Rect2(0, 0, 960, 1080)
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground2"]
+motion_scale = Vector2(0.5, 0.2)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Back3" type="Sprite2D" parent="CanvasLayer/ParallaxBackground2/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(480, 1200)
+scale = Vector2(2, 2)
+texture = ExtResource("7_5eutd")
+region_enabled = true
+region_rect = Rect2(0, 0, 960, 1080)
+
+[node name="Ground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/Ground"]
+texture_repeat = 2
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(960, 0)
+
+[node name="GroundSpr" type="Sprite2D" parent="CanvasLayer/Ground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(960, 678)
+scale = Vector2(2, 2)
+texture = ExtResource("6_57ghx")
+region_enabled = true
+region_rect = Rect2(0, 0, 960, 270)
+
+[node name="Shura" type="AnimatedSprite2D" parent="."]
+position = Vector2(680, 366)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_1wbsp")
+autoplay = "default"
+frame_progress = 0.400023
+
+[node name="Pantcakes" type="AnimatedSprite2D" parent="."]
+position = Vector2(824, 366)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_1wbsp")
+animation = &"Pantcakes"
+autoplay = "Pantcakes"
+frame_progress = 0.397164
+
+[node name="Pantcakes2" type="AnimatedSprite2D" parent="."]
+position = Vector2(872, 366)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_1wbsp")
+animation = &"Pantcakes"
+autoplay = "Pantcakes"
+frame_progress = 0.42875
+
+[node name="Pantcakes3" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 366)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_1wbsp")
+animation = &"Pantcakes"
+autoplay = "Pantcakes"
+frame_progress = 0.938841
+
+[node name="SprCreditsBack" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_cetuk")
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_right = 960.0
+offset_bottom = 576.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 2.0
+offset_top = 552.0
+offset_right = 250.0
+offset_bottom = 1784.0
+scale = Vector2(2, 2)
+theme_override_fonts/normal_font = ExtResource("1_5oht7")
+bbcode_enabled = true
+text = "[center]
+BEEFURIOUS, SHURA!
+
+CAST
+
+VTubers
+[color=pink]Shura Hiwa[/color]
+Eru Nabura
+Nisha Nixyeva
+Meica05
+Yukine Olwin
+Haise Moriarty
+CondesaVR
+Mai Noboshi
+Eiwy Fley
+Cowokie
+ChairGTables
+
+Personajes Originales
+Shroo
+Rosa
+Celeste
+Caramel
+
+Personajes invitados
+Froo
+Karu
+Liz
+
+CRÉDITOS
+
+Desarrollado por
+[color=yellow]SleP16[/color]
+
+Diseño de jefes
+SleP16
+ChairGTables
+
+Playtesting
+Klaymen93
+Emperador Pantcake
+Hincha de Shura
+Ofeb Kouki
+
+Actuación de voz
+Rosa - Noelle Magyar
+Celeste - Noelle Magyar
+Caramel -  ChairGTables
+ChairGTables - ChairGTables
+
+Efectos de sonido
+SleP16
+ViRiX Dreamcore (David McKee)
+WrathGames Studio
+
+Arte, código y música original
+SleP16
+
+Arte promocional
+Emperador Pantcake
+
+Diálogos especiales
+ChairGTables
+Shura Hiwa
+CondesaVR
+Eiwy Fley
+Mai Noboshi
+
+Música no original
+Sling out - DOVA-SYNDROME
+The Flight of the Bumblebee (Recreation) - CX Team
+
+Gracias especiales
+
+ChairGTables, por prestar su voz para el jefe final y ayudar a diseñar algunas de las mecánicas!
+
+Y a Shura Hiwa, por siempre esforzarse en todos sus proyectos y motivarme/inspirarme a terminar este fangame. Espero que sigas con nosotros por muchos años más!
+
+Si llegaste hasta aquí, gracias por jugar y darle una oportunidad a este juego.
+
+[/center]"
+fit_content = true
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 970.0
+offset_bottom = 556.0
+color = Color(0, 0, 0, 1)
+
+[node name="SprSToSkip" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(846, 512)
+scale = Vector2(2, 2)
+texture = ExtResource("11_b4qja")
+
+[node name="SkipColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = 999
+offset_left = -184.0
+offset_top = -152.0
+offset_right = 1144.0
+offset_bottom = 668.0
+color = Color(0, 0, 0, 1)

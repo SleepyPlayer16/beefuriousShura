@@ -1,0 +1,10 @@
+[
+	{"CharacterLeft":"Shura", "CharacterRight":"Eru"},
+	{"Name":"Eru", "SecondaryName": "","Text":"¡Hola Chuwa!", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Shura", "SecondaryName": "","Text":"¡Ewu!", "Emotion": "Happy", "Side": "Left"},
+	{"Name":"Eru", "SecondaryName": "","Text":"Tengo información muy importante que contarte!", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Eru", "SecondaryName": "","Text":"Si alguna vez te encuentras en una pelea, ¡no dudes en llamarme!", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Eru", "SecondaryName": "","Text":"¡Si notas que tu oponente está cansado, llámame con [A] y lo aturdiré para que puedas asestarle un golpe!", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Eru", "SecondaryName": "","Text":"Y más vale que lo golpees con toda tu ¡¡FURIA!!", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Shura", "SecondaryName": "","Text":"Ok Ewu, lo tendré en cuenta, gracias!", "Emotion": "Happy", "Side": "Left"},
+]

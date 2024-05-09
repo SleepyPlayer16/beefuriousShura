@@ -1,0 +1,45 @@
+[
+  { "CharacterLeft": "Shura", "CharacterRight": "Pantcake" },
+  {
+	"Name": "Pantcake",
+	"SecondaryName": "",
+	"Text": "¡S-Shura!",
+	"Emotion": "Scared",
+	"Side": "Right"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "¿Estás bien? ¿No te pasó nada?",
+	"Emotion": "Rock",
+	"Side": "Left"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "¡Por favor perdóname, prometo que no dejaré que te vuelvan a secuestrar!",
+	"Emotion": "Rock",
+	"Side": "Left"
+  },
+  {
+	"Name": "Pantcake",
+	"SecondaryName": "",
+	"Text": "Shura...",
+	"Emotion": "Scared",
+	"Side": "Right"
+  },
+  {
+	"Name": "Pantcake",
+	"SecondaryName": "",
+	"Text": "D-detras de tí...",
+	"Emotion": "Scared",
+	"Side": "Right"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "¿Eh?",
+	"Emotion": "Normal",
+	"Side": "Left"
+  }
+]

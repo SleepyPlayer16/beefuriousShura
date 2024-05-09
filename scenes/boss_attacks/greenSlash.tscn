@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://b27ety7sox5x1"]
+
+[ext_resource type="Script" path="res://scripts/greenSlash.gd" id="1_1dtim"]
+[ext_resource type="Texture2D" uid="uid://buarpkry5e774" path="res://sprites/rosa/spr_greenEnergyFX.png" id="1_s4gsl"]
+[ext_resource type="AudioStream" uid="uid://cpitktce5rcu5" path="res://sounds/greenSlashsfx.wav" id="3_md52d"]
+[ext_resource type="PackedScene" uid="uid://bkrrmx2twhic1" path="res://scenes/obstacles/blastZone.tscn" id="4_llgln"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dwdq"]
+atlas = ExtResource("1_s4gsl")
+region = Rect2(204, 0, 102, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7s140"]
+atlas = ExtResource("1_s4gsl")
+region = Rect2(306, 0, 102, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fle5"]
+atlas = ExtResource("1_s4gsl")
+region = Rect2(408, 0, 102, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1rcf"]
+atlas = ExtResource("1_s4gsl")
+region = Rect2(0, 0, 102, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anjcb"]
+atlas = ExtResource("1_s4gsl")
+region = Rect2(102, 0, 102, 108)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7hrc4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dwdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7s140")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fle5")
+}],
+"loop": true,
+"name": &"Default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1rcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anjcb")
+}],
+"loop": false,
+"name": &"Spawn",
+"speed": 14.0
+}]
+
+[node name="greenSlash" type="Node2D"]
+top_level = true
+script = ExtResource("1_1dtim")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_7hrc4")
+animation = &"Default"
+autoplay = "Spawn"
+
+[node name="blastZone" parent="AnimatedSprite2D" instance=ExtResource("4_llgln")]
+visible = false
+position = Vector2(-8, -44)
+rotation = 3.14159
+scale = Vector2(0.96875, -3)
+damage = 1
+damageType = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_md52d")
+volume_db = -5.0
+autoplay = true
+bus = &"Sound"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

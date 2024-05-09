@@ -1,0 +1,125 @@
+[gd_scene load_steps=17 format=3 uid="uid://crapexemftvfs"]
+
+[ext_resource type="Script" path="res://scripts/greenSlash.gd" id="1_204ux"]
+[ext_resource type="Texture2D" uid="uid://buarpkry5e774" path="res://sprites/rosa/spr_greenEnergyFX.png" id="2_61b13"]
+[ext_resource type="PackedScene" uid="uid://bkrrmx2twhic1" path="res://scenes/obstacles/blastZone.tscn" id="3_oht1b"]
+[ext_resource type="Texture2D" uid="uid://coc5l0rmwmprx" path="res://sprites/caramel/phase1/spr_earthquakeWave.png" id="3_trh1o"]
+[ext_resource type="AudioStream" uid="uid://cpitktce5rcu5" path="res://sounds/greenSlashsfx.wav" id="4_12p8a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dwdq"]
+atlas = ExtResource("2_61b13")
+region = Rect2(204, 0, 102, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7s140"]
+atlas = ExtResource("2_61b13")
+region = Rect2(306, 0, 102, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fle5"]
+atlas = ExtResource("2_61b13")
+region = Rect2(408, 0, 102, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryvy3"]
+atlas = ExtResource("3_trh1o")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ciby"]
+atlas = ExtResource("3_trh1o")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp422"]
+atlas = ExtResource("3_trh1o")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36fg4"]
+atlas = ExtResource("3_trh1o")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4n1e"]
+atlas = ExtResource("3_trh1o")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1rcf"]
+atlas = ExtResource("2_61b13")
+region = Rect2(0, 0, 102, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anjcb"]
+atlas = ExtResource("2_61b13")
+region = Rect2(102, 0, 102, 108)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7hrc4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dwdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7s140")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fle5")
+}],
+"loop": true,
+"name": &"Default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryvy3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ciby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mp422")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36fg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4n1e")
+}],
+"loop": true,
+"name": &"Qave",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1rcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anjcb")
+}],
+"loop": false,
+"name": &"Spawn",
+"speed": 14.0
+}]
+
+[node name="quakeWave" type="Node2D"]
+top_level = true
+script = ExtResource("1_204ux")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_7hrc4")
+animation = &"Qave"
+autoplay = "Qave"
+frame_progress = 0.396458
+
+[node name="blastZone" parent="AnimatedSprite2D" instance=ExtResource("3_oht1b")]
+visible = false
+position = Vector2(16, -18.3361)
+rotation = 3.14159
+scale = Vector2(0.96875, -1.46702)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_12p8a")
+volume_db = -5.0
+autoplay = true
+bus = &"Sound"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+autostart = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

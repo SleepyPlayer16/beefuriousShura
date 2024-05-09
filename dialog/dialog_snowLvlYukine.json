@@ -1,0 +1,66 @@
+[
+  { "CharacterLeft": "Shura", "CharacterRight": "Yukine" },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "¡Ya no tengas miedo, ya me encargué de ese tipo!",
+	"Emotion": "Happy",
+	"Side": "Left"
+  },
+  {
+	"Name": "Yukine",
+	"SecondaryName": "",
+	"Text": "M-muchas gracias...",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "¿Eh? ¿Puedes hablar?",
+	"Emotion": "Normal",
+	"Side": "Left"
+  },
+  {
+	"Name": "Yukine",
+	"SecondaryName": "",
+	"Text": "Sí, en realidad esta no es mi forma real, vine a explorar este lugar en mi forma humana, pero...",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "Yukine",
+	"SecondaryName": "",
+	"Text": "Un tipo con peluca me engañó y me robó todo mi dinero.",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "Yukine",
+	"SecondaryName": "",
+	"Text": "Volví a esta forma, esperando a que alguien me ayudara, pero fui engañada de nuevo...",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "Tipo con peluca... Haise...",
+	"Emotion": "Normal",
+	"Side": "Left"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "Luego nos encargaremos de el. Por ahora puedes quedarte en mi taller si buscas un lugar seguro.",
+	"Emotion": "Normal",
+	"Side": "Left"
+  },
+  {
+	"Name": "Yukine",
+	"SecondaryName": "",
+	"Text": "Está bien, gracias...",
+	"Emotion": "Normal",
+	"Side": "Right"
+  }
+]

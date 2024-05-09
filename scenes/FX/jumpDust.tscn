@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1elrj62dcqf1"]
+
+[ext_resource type="Texture2D" uid="uid://bbi4tfs87lanx" path="res://sprites/FX/DashDustParticles.png" id="1_aniuc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypnc2"]
+atlas = ExtResource("1_aniuc")
+region = Rect2(0, 0, 32, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lc0xl"]
+atlas = ExtResource("1_aniuc")
+region = Rect2(32, 0, 32, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avw1h"]
+atlas = ExtResource("1_aniuc")
+region = Rect2(64, 0, 32, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j64nh"]
+atlas = ExtResource("1_aniuc")
+region = Rect2(96, 0, 32, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ni0vm"]
+atlas = ExtResource("1_aniuc")
+region = Rect2(128, 0, 32, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olgic"]
+atlas = ExtResource("1_aniuc")
+region = Rect2(160, 0, 32, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_blc41"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypnc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lc0xl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avw1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j64nh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ni0vm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olgic")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"noone",
+"speed": 1.0
+}]
+
+[node name="JumpDust" type="AnimatedSprite2D"]
+position = Vector2(0, -18.4939)
+sprite_frames = SubResource("SpriteFrames_blc41")
+autoplay = "default"

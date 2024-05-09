@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3u48e18yci8x"]
+
+[ext_resource type="Texture2D" uid="uid://bkacgswn5t7ts" path="res://sprites/hud/spr_pauseOptions.png" id="1_1aq8o"]
+[ext_resource type="Script" path="res://scripts/pauseMenu.gd" id="1_3lwxp"]
+[ext_resource type="AudioStream" uid="uid://cud2cw3mx7vxg" path="res://music/mus_options.ogg" id="3_0uesh"]
+[ext_resource type="AudioStream" uid="uid://cjvgdbmjm8adk" path="res://sounds/sfx_menuMove.wav" id="4_ihcgp"]
+[ext_resource type="AudioStream" uid="uid://ekmdss7w7qg1" path="res://sounds/sfx_menuSelect.wav" id="5_g764x"]
+
+[node name="pauseMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 128
+script = ExtResource("1_3lwxp")
+
+[node name="SprPauseOptions" type="Sprite2D" parent="."]
+position = Vector2(328, 552)
+scale = Vector2(2, 2)
+texture = ExtResource("1_1aq8o")
+centered = false
+offset = Vector2(-2, 1)
+hframes = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="PauseSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0uesh")
+volume_db = -60.0
+bus = &"Music"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -104.0
+offset_top = -56.0
+offset_right = 1064.0
+offset_bottom = 592.0
+color = Color(0.00392157, 0.0470588, 0.0627451, 1)
+
+[node name="GoBackTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="MenuMove" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ihcgp")
+volume_db = -3.0
+bus = &"Sound"
+
+[node name="MenuSelect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_g764x")
+bus = &"Sound"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="GoBackTimer" to="." method="_on_go_back_timer_timeout"]

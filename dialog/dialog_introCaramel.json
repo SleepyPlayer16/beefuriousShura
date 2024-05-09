@@ -1,0 +1,45 @@
+[
+  { "CharacterLeft": "none", "CharacterRight": "Caramel" },
+  {
+	"Name": "Caramel",
+	"SecondaryName": "",
+	"Text": "Maldición... Llevo días buscando más abejas para que trabajen para mi...",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "Caramel",
+	"SecondaryName": "",
+	"Text": "Necesito encontrar más abejas, y pronto...",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "Caramel",
+	"SecondaryName": "TriggerEvent",
+	"Text": "...",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "Caramel",
+	"SecondaryName": "",
+	"Text": "¿Pero qué es eso que veo?",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "Caramel",
+	"SecondaryName": "",
+	"Text": "Una criatura amarilla extraña... Parece tener miel en la cabeza... ¡Por fin!",
+	"Emotion": "Confident",
+	"Side": "Right"
+  },
+  {
+	"Name": "Caramel",
+	"SecondaryName": "",
+	"Text": "No sé que tipo de abeja es, ¡pero creo que me servirá!",
+	"Emotion": "Confident",
+	"Side": "Right"
+  }
+]

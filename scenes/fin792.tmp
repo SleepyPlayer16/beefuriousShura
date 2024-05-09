@@ -1,0 +1,152 @@
+[gd_scene load_steps=11 format=3 uid="uid://kvgdfsuu4cbo"]
+
+[ext_resource type="Texture2D" uid="uid://1mqmsflkonj6" path="res://sprites/levels/3/backgroundElements/spr_hiveBack.png" id="1_5iifj"]
+[ext_resource type="Script" path="res://scripts/finalB_tstScn.gd" id="1_86k0i"]
+[ext_resource type="Texture2D" uid="uid://yxfqiciblulh" path="res://sprites/levels/3/backgroundElements/spr_hiveGroundBoss.png" id="2_u015a"]
+[ext_resource type="PackedScene" uid="uid://dfowxjebwiten" path="res://scenes/other/lamp.tscn" id="3_s65vr"]
+[ext_resource type="Texture2D" uid="uid://yeqygvttfnd0" path="res://sprites/levels/3/backgroundElements/spr_hiveGroundBossLower.png" id="4_brrc7"]
+[ext_resource type="PackedScene" uid="uid://wsdgt3vitjlt" path="res://scenes/player.tscn" id="5_tmqxf"]
+[ext_resource type="PackedScene" uid="uid://bjvcwvotigovi" path="res://scenes/bosses/caramel.tscn" id="7_sq3cf"]
+[ext_resource type="PackedScene" uid="uid://d4go5qjxddx2v" path="res://scenes/other/Pillar.tscn" id="8_yurel"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sg2k"]
+size = Vector2(2880, 242)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ko7gg"]
+size = Vector2(101, 3538)
+
+[node name="finalB_tstScn" type="Node2D"]
+script = ExtResource("1_86k0i")
+
+[node name="shuraFightBeginMarker" type="Marker2D" parent="."]
+position = Vector2(-80, -14)
+
+[node name="caramelFightBeginMarker" type="Marker2D" parent="."]
+position = Vector2(48, -14)
+
+[node name="SprHiveBack" type="Sprite2D" parent="."]
+position = Vector2(16, -154)
+texture = ExtResource("1_5iifj")
+
+[node name="SprHiveBack2" type="Sprite2D" parent="SprHiveBack"]
+position = Vector2(0, -457)
+texture = ExtResource("1_5iifj")
+
+[node name="SprHiveBack5" type="Sprite2D" parent="SprHiveBack"]
+position = Vector2(-960, 0)
+texture = ExtResource("1_5iifj")
+
+[node name="SprHiveBack6" type="Sprite2D" parent="SprHiveBack"]
+position = Vector2(-960, -457)
+texture = ExtResource("1_5iifj")
+
+[node name="SprHiveBack7" type="Sprite2D" parent="SprHiveBack"]
+position = Vector2(960, 0)
+texture = ExtResource("1_5iifj")
+
+[node name="SprHiveBack8" type="Sprite2D" parent="SprHiveBack"]
+position = Vector2(960, -457)
+texture = ExtResource("1_5iifj")
+
+[node name="SprHiveGroundBoss" type="Sprite2D" parent="."]
+position = Vector2(-464, -26)
+texture = ExtResource("2_u015a")
+centered = false
+
+[node name="SprHiveGroundBoss2" type="Sprite2D" parent="."]
+position = Vector2(-1424, -26)
+texture = ExtResource("2_u015a")
+centered = false
+
+[node name="SprHiveGroundBoss3" type="Sprite2D" parent="."]
+position = Vector2(496, -26)
+texture = ExtResource("2_u015a")
+centered = false
+
+[node name="Lamp16" parent="." instance=ExtResource("3_s65vr")]
+position = Vector2(192, -27)
+intensity = 0.3
+
+[node name="Lamp17" parent="." instance=ExtResource("3_s65vr")]
+position = Vector2(-200, -27)
+intensity = 0.3
+
+[node name="Lamp18" parent="." instance=ExtResource("3_s65vr")]
+position = Vector2(0, -27)
+intensity = 0.3
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(0, -99)
+enabled = false
+zoom = Vector2(2, 2)
+
+[node name="SprHiveGroundBossLower" type="Sprite2D" parent="."]
+position = Vector2(-1424, 103)
+texture = ExtResource("4_brrc7")
+centered = false
+
+[node name="SprHiveGroundBossLower2" type="Sprite2D" parent="SprHiveGroundBossLower"]
+position = Vector2(960, 0)
+texture = ExtResource("4_brrc7")
+centered = false
+
+[node name="SprHiveGroundBossLower3" type="Sprite2D" parent="SprHiveGroundBossLower"]
+position = Vector2(1920, 0)
+texture = ExtResource("4_brrc7")
+centered = false
+
+[node name="SprHiveGroundBossLower4" type="Sprite2D" parent="SprHiveGroundBossLower"]
+z_index = 200
+position = Vector2(0, -67)
+texture = ExtResource("4_brrc7")
+centered = false
+
+[node name="SprHiveGroundBossLower5" type="Sprite2D" parent="SprHiveGroundBossLower"]
+z_index = 205
+position = Vector2(960, -67)
+texture = ExtResource("4_brrc7")
+centered = false
+
+[node name="SprHiveGroundBossLower6" type="Sprite2D" parent="SprHiveGroundBossLower"]
+z_index = 200
+position = Vector2(1920, -67)
+texture = ExtResource("4_brrc7")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(16, 123)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_6sg2k")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-1231, -33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(18, -1666)
+shape = SubResource("RectangleShape2D_ko7gg")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(1228, -33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(18, -1666)
+shape = SubResource("RectangleShape2D_ko7gg")
+
+[node name="Pillar" parent="." instance=ExtResource("8_yurel")]
+position = Vector2(-408, -16)
+
+[node name="Pillar2" parent="." instance=ExtResource("8_yurel")]
+position = Vector2(-584, -16)
+
+[node name="Pillar3" parent="." instance=ExtResource("8_yurel")]
+position = Vector2(560, -16)
+
+[node name="Pillar4" parent="." instance=ExtResource("8_yurel")]
+position = Vector2(384, -16)
+
+[node name="player" parent="." instance=ExtResource("5_tmqxf")]
+position = Vector2(92, -16)
+
+[node name="caramel" parent="." instance=ExtResource("7_sq3cf")]
+position = Vector2(192, -16)

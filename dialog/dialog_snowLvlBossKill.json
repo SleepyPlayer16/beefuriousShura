@@ -1,0 +1,25 @@
+[
+  { "CharacterLeft": "Shura", "CharacterRight": "" },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "...",
+	"Emotion": "Normal",
+	"Side": "Left"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "Que criaturas tan extrañas...",
+	"Emotion": "Normal",
+	"Side": "Left"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "Será mejor que me marche de aquí antes de que Haise mande a más furros.",
+	"Emotion": "Normal",
+	"Side": "Left"
+  }
+]
+

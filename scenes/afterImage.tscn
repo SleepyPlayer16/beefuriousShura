@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1bcngpqwn1ny"]
+
+[ext_resource type="Script" path="res://scripts/afterImage.gd" id="1_vqy8v"]
+
+[node name="afterImage" type="Sprite2D"]
+modulate = Color(1, 0.00784314, 0.415686, 1)
+top_level = true
+script = ExtResource("1_vqy8v")

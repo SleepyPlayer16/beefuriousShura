@@ -1,0 +1,17 @@
+{
+	"settings_data": {
+		"fullscreen": 0,
+		"sfxVolume": 0.6,
+		"musVolume": 0.6,
+		"vsync": 1
+	},
+	"game_data": {
+		"current_level": "none",
+		"level2_unlocked": false,
+		"creaturas_unlocked": false,
+		"level3_unlocked": false,
+		"finalBoss_unlocked": false,
+		"level4_unlocked": false,
+		"secret_lab_unlocked": false
+	}
+}

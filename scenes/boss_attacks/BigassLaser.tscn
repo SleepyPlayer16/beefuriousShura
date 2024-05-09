@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://y8bhaawtdjcd"]
+
+[ext_resource type="Script" path="res://scripts/BigassLaser.gd" id="1_eoefj"]
+[ext_resource type="Texture2D" uid="uid://0u523byrai6d" path="res://sprites/caramel/phase2/spr_bigassLaser.png" id="1_yheff"]
+[ext_resource type="AudioStream" uid="uid://c7mrnabvcwlkm" path="res://sounds/finalB/sfx_bigassLaser.wav" id="3_rt2vs"]
+[ext_resource type="AudioStream" uid="uid://dw66u3oe0ey13" path="res://sounds/voiceClips/caramel/sfx_transformationScream.wav" id="4_810sh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odcg7"]
+atlas = ExtResource("1_yheff")
+region = Rect2(1184, 0, 592, 185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxni6"]
+atlas = ExtResource("1_yheff")
+region = Rect2(1776, 0, 592, 185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l60s"]
+atlas = ExtResource("1_yheff")
+region = Rect2(2368, 0, 592, 185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4p6w"]
+atlas = ExtResource("1_yheff")
+region = Rect2(0, 0, 592, 185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwafn"]
+atlas = ExtResource("1_yheff")
+region = Rect2(592, 0, 592, 185)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sh04h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odcg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxni6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6l60s")
+}],
+"loop": true,
+"name": &"Loop",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4p6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwafn")
+}],
+"loop": false,
+"name": &"default",
+"speed": 14.0
+}]
+
+[node name="BigassLaser" type="Node2D"]
+z_index = 290
+script = ExtResource("1_eoefj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-256, 0)
+sprite_frames = SubResource("SpriteFrames_sh04h")
+animation = &"Loop"
+autoplay = "default"
+frame_progress = 0.408019
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rt2vs")
+autoplay = true
+
+[node name="Scream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_810sh")
+volume_db = -4.0
+autoplay = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

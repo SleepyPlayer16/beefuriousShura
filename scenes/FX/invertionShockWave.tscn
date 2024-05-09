@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgaw20lj2obf5"]
+
+[ext_resource type="Shader" path="res://shaders/invert.gdshader" id="1_k67ek"]
+[ext_resource type="AudioStream" uid="uid://y25x60utwrnd" path="res://sounds/sfx_superBallHit.wav" id="2_2dbdo"]
+[ext_resource type="Script" path="res://scripts/invertionShockWave.gd" id="2_bj4wu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sx2lm"]
+shader = ExtResource("1_k67ek")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nhg2"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+anti_aliasing = false
+
+[node name="invertionShockWave" type="Panel" groups=["shockwave"]]
+z_index = 200
+material = SubResource("ShaderMaterial_sx2lm")
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 1.0
+pivot_offset = Vector2(1, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_0nhg2")
+script = ExtResource("2_bj4wu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_2dbdo")
+volume_db = -7.0
+autoplay = true
+bus = &"Sound"

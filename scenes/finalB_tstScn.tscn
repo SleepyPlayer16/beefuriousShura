@@ -1,0 +1,544 @@
+[gd_scene load_steps=39 format=3 uid="uid://kvgdfsuu4cbo"]
+
+[ext_resource type="Texture2D" uid="uid://1mqmsflkonj6" path="res://sprites/levels/3/backgroundElements/spr_hiveBack.png" id="1_5iifj"]
+[ext_resource type="Script" path="res://scripts/finalB_tstScn.gd" id="1_86k0i"]
+[ext_resource type="Texture2D" uid="uid://yxfqiciblulh" path="res://sprites/levels/3/backgroundElements/spr_hiveGroundBoss.png" id="2_u015a"]
+[ext_resource type="Texture2D" uid="uid://o0hgexx2by2k" path="res://sprites/levels/3/backgroundElements/backgroundNothing.png" id="2_xtptp"]
+[ext_resource type="Texture2D" uid="uid://bkeabobrmbwgy" path="res://sprites/levels/3/backgroundElements/backMountainsFurther.png" id="3_hvp57"]
+[ext_resource type="PackedScene" uid="uid://dfowxjebwiten" path="res://scenes/other/lamp.tscn" id="3_s65vr"]
+[ext_resource type="Texture2D" uid="uid://daldraj574ehj" path="res://sprites/levels/3/backgroundElements/spr_hiveBackBroken.png" id="3_x6mk6"]
+[ext_resource type="Texture2D" uid="uid://c0brqde6owxyr" path="res://sprites/levels/3/backgroundElements/backMountains.png" id="4_6d02i"]
+[ext_resource type="Texture2D" uid="uid://yeqygvttfnd0" path="res://sprites/levels/3/backgroundElements/spr_hiveGroundBossLower.png" id="4_brrc7"]
+[ext_resource type="Texture2D" uid="uid://ct5kyd2m7o0qw" path="res://sprites/levels/3/backgroundElements/backgroundCloudsBack.png" id="5_8oalo"]
+[ext_resource type="PackedScene" uid="uid://wsdgt3vitjlt" path="res://scenes/player.tscn" id="5_tmqxf"]
+[ext_resource type="PackedScene" uid="uid://2732uol80c00" path="res://scenes/FX/thunder.tscn" id="6_xiqmc"]
+[ext_resource type="Shader" path="res://shaders/rain.gdshader" id="7_q5w1k"]
+[ext_resource type="PackedScene" uid="uid://bjvcwvotigovi" path="res://scenes/bosses/caramel.tscn" id="7_sq3cf"]
+[ext_resource type="Texture2D" uid="uid://b4asrmdwseo6f" path="res://sprites/levels/3/backgroundElements/backgroundCloudsFront.png" id="8_xudkr"]
+[ext_resource type="PackedScene" uid="uid://d4go5qjxddx2v" path="res://scenes/other/Pillar.tscn" id="8_yurel"]
+[ext_resource type="PackedScene" uid="uid://msg3vpadbe3l" path="res://scenes/boss_attacks/beeBomb.tscn" id="9_3hh13"]
+[ext_resource type="Texture2D" uid="uid://c5xi81qba7n3v" path="res://sprites/levels/3/backgroundElements/back0.png" id="9_e6mg5"]
+[ext_resource type="Texture2D" uid="uid://28cgdxlwt488" path="res://sprites/hud/spr_caramelHP_alt.png" id="19_gex17"]
+[ext_resource type="PackedScene" uid="uid://4rs3qotsdd1u" path="res://scenes/other/caramelSpeech.tscn" id="20_k85rt"]
+[ext_resource type="PackedScene" uid="uid://dx7cvp3lvbh8e" path="res://scenes/other/energyReplenisher.tscn" id="20_savsw"]
+[ext_resource type="PackedScene" uid="uid://p5ttkldfb3an" path="res://scenes/hud/vsScreen.tscn" id="21_wwcxb"]
+[ext_resource type="Texture2D" uid="uid://dqydfk38h3r2c" path="res://sprites/pantcake/spr_pantcakePrison.png" id="22_rcbx7"]
+[ext_resource type="Texture2D" uid="uid://cd2ra8a3ovrjj" path="res://sprites/pantcake/spr_pantcakeCry.png" id="23_xgq1i"]
+[ext_resource type="Texture2D" uid="uid://dlk4gkldlqowc" path="res://sprites/pantcake/spr_pantcakeRun.png" id="24_jbk7h"]
+[ext_resource type="PackedScene" uid="uid://cy8kwcr4i25cl" path="res://scenes/bosses/zombieCaramel.tscn" id="25_6y30k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xngdn"]
+shader = ExtResource("7_q5w1k")
+shader_parameter/rain_amount = 200.0
+shader_parameter/near_rain_length = 0.097
+shader_parameter/far_rain_length = 0.176
+shader_parameter/near_rain_width = 0.1
+shader_parameter/far_rain_width = 0.1
+shader_parameter/near_rain_transparency = 1.0
+shader_parameter/far_rain_transparency = 0.5
+shader_parameter/rain_color = Color(0.529412, 0.8, 0.8, 0.486275)
+shader_parameter/base_rain_speed = 1.0
+shader_parameter/additional_rain_speed = 0.5
+shader_parameter/slant = 0.2
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d2icy"]
+blend_mode = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sg2k"]
+size = Vector2(2880, 242)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ko7gg"]
+size = Vector2(101, 3538)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k57au"]
+atlas = ExtResource("22_rcbx7")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flcou"]
+atlas = ExtResource("22_rcbx7")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3quk"]
+atlas = ExtResource("23_xgq1i")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55gx1"]
+atlas = ExtResource("24_jbk7h")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36pe0"]
+atlas = ExtResource("24_jbk7h")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_stq8q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k57au")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flcou")
+}],
+"loop": true,
+"name": &"default",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3quk")
+}],
+"loop": true,
+"name": &"free",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55gx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36pe0")
+}],
+"loop": true,
+"name": &"scared",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epkux"]
+size = Vector2(80, 851)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfdrl"]
+size = Vector2(263, 315)
+
+[node name="finalB_tstScn" type="Node2D"]
+script = ExtResource("1_86k0i")
+
+[node name="Backs" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Backs"]
+layer = -99
+
+[node name="Back" type="Sprite2D" parent="Backs/ParallaxBackground"]
+position = Vector2(480, 270)
+scale = Vector2(2, 2)
+texture = ExtResource("2_xtptp")
+
+[node name="ColorRect" type="ColorRect" parent="Backs/ParallaxBackground"]
+visible = false
+offset_right = 1016.0
+offset_bottom = 624.0
+color = Color(0.223529, 0.792157, 0.87451, 1)
+
+[node name="ParallaxBackground3" type="ParallaxBackground" parent="Backs"]
+layer = -99
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Backs/ParallaxBackground3"]
+motion_scale = Vector2(0.1, 0.05)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Back3" type="Sprite2D" parent="Backs/ParallaxBackground3/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(480, 620)
+texture = ExtResource("3_hvp57")
+region_enabled = true
+region_rect = Rect2(0, 0, 960, 1080)
+
+[node name="ParallaxBackground4" type="ParallaxBackground" parent="Backs"]
+layer = -99
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Backs/ParallaxBackground4"]
+motion_scale = Vector2(0.2, 0.1)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Back3" type="Sprite2D" parent="Backs/ParallaxBackground4/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(480, 596)
+texture = ExtResource("4_6d02i")
+region_enabled = true
+region_rect = Rect2(0, 0, 960, 1080)
+
+[node name="ParallaxBackground6" type="ParallaxBackground" parent="Backs"]
+layer = -99
+visible = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Backs/ParallaxBackground6"]
+position = Vector2(0, -35)
+motion_scale = Vector2(0.09, 0.04)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Back3" type="Sprite2D" parent="Backs/ParallaxBackground6/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(480, 132)
+texture = ExtResource("5_8oalo")
+region_enabled = true
+region_rect = Rect2(0, 0, 960, 270)
+
+[node name="Thunderrrr" type="ParallaxBackground" parent="Backs"]
+layer = -99
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Backs/Thunderrrr"]
+light_mask = 2
+motion_scale = Vector2(0.1, 0.05)
+motion_mirroring = Vector2(480, 0)
+
+[node name="thunder" parent="Backs/Thunderrrr/ParallaxLayer" instance=ExtResource("6_xiqmc")]
+position = Vector2(240, 64)
+
+[node name="RainBack" type="ParallaxBackground" parent="Backs"]
+layer = -99
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Backs/RainBack"]
+motion_scale = Vector2(0.15, 0.08)
+motion_mirroring = Vector2(960, 540)
+
+[node name="ColorRect" type="ColorRect" parent="Backs/RainBack/ParallaxLayer"]
+material = SubResource("ShaderMaterial_xngdn")
+offset_left = 960.0
+offset_right = 1920.0
+offset_bottom = 540.0
+scale = Vector2(-1, 1)
+color = Color(1, 1, 1, 0)
+
+[node name="ParallaxBackground5" type="ParallaxBackground" parent="Backs"]
+layer = -99
+visible = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Backs/ParallaxBackground5"]
+position = Vector2(0, -32)
+motion_scale = Vector2(0.15, 0.08)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Back3" type="Sprite2D" parent="Backs/ParallaxBackground5/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(480, 132)
+texture = ExtResource("8_xudkr")
+region_enabled = true
+region_rect = Rect2(0, 0, 960, 270)
+
+[node name="MainBack" type="ParallaxBackground" parent="Backs"]
+layer = -99
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Backs/MainBack"]
+motion_scale = Vector2(0.5, 0.2)
+motion_mirroring = Vector2(960, 0)
+
+[node name="Back3" type="Sprite2D" parent="Backs/MainBack/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(480, 672)
+texture = ExtResource("9_e6mg5")
+region_enabled = true
+region_rect = Rect2(0, 0, 960, 1080)
+
+[node name="ParallaxBackground9" type="ParallaxBackground" parent="Backs"]
+layer = -50
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Backs/ParallaxBackground9"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(960, 540)
+
+[node name="DarkEffect" type="ColorRect" parent="Backs/ParallaxBackground9/ParallaxLayer"]
+visible = false
+material = SubResource("CanvasItemMaterial_d2icy")
+offset_right = 960.0
+offset_bottom = 540.0
+scale = Vector2(-1, 1)
+color = Color(0.145098, 0.247059, 0.215686, 0.345098)
+
+[node name="shuraFightBeginMarker" type="Marker2D" parent="."]
+position = Vector2(-80, -14)
+
+[node name="caramelFightBeginMarker" type="Marker2D" parent="."]
+position = Vector2(48, -14)
+
+[node name="SprHiveBack" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(16, -154)
+texture = ExtResource("1_5iifj")
+metadata/_edit_lock_ = true
+
+[node name="SprHiveBack2" type="Sprite2D" parent="SprHiveBack"]
+position = Vector2(0, -457)
+texture = ExtResource("1_5iifj")
+metadata/_edit_lock_ = true
+
+[node name="SprHiveBack5" type="Sprite2D" parent="SprHiveBack"]
+position = Vector2(-960, 0)
+texture = ExtResource("1_5iifj")
+metadata/_edit_lock_ = true
+
+[node name="SprHiveBack6" type="Sprite2D" parent="SprHiveBack"]
+position = Vector2(-960, -457)
+texture = ExtResource("1_5iifj")
+metadata/_edit_lock_ = true
+
+[node name="SprHiveBack7" type="Sprite2D" parent="SprHiveBack"]
+position = Vector2(960, 0)
+texture = ExtResource("1_5iifj")
+metadata/_edit_lock_ = true
+
+[node name="SprHiveBack8" type="Sprite2D" parent="SprHiveBack"]
+position = Vector2(960, -457)
+texture = ExtResource("1_5iifj")
+metadata/_edit_lock_ = true
+
+[node name="SprHiveBack3" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(16, -267)
+texture = ExtResource("3_x6mk6")
+
+[node name="SprHiveBack4" type="Sprite2D" parent="SprHiveBack3"]
+position = Vector2(0, -540)
+scale = Vector2(1, -1)
+texture = ExtResource("3_x6mk6")
+
+[node name="SprHiveBack9" type="Sprite2D" parent="SprHiveBack3"]
+position = Vector2(-960, 0)
+texture = ExtResource("3_x6mk6")
+
+[node name="SprHiveBack10" type="Sprite2D" parent="SprHiveBack3"]
+position = Vector2(-960, -540)
+scale = Vector2(1, -1)
+texture = ExtResource("3_x6mk6")
+
+[node name="SprHiveBack11" type="Sprite2D" parent="SprHiveBack3"]
+position = Vector2(960, 0)
+texture = ExtResource("3_x6mk6")
+
+[node name="SprHiveBack12" type="Sprite2D" parent="SprHiveBack3"]
+position = Vector2(960, -540)
+scale = Vector2(1, -1)
+texture = ExtResource("3_x6mk6")
+
+[node name="SprHiveGroundBoss" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-464, -26)
+texture = ExtResource("2_u015a")
+centered = false
+
+[node name="SprHiveGroundBoss2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-1424, -26)
+texture = ExtResource("2_u015a")
+centered = false
+
+[node name="SprHiveGroundBoss3" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(496, -26)
+texture = ExtResource("2_u015a")
+centered = false
+
+[node name="Lamp16" parent="." instance=ExtResource("3_s65vr")]
+position = Vector2(192, -27)
+intensity = 0.3
+
+[node name="Lamp17" parent="." instance=ExtResource("3_s65vr")]
+position = Vector2(-200, -27)
+intensity = 0.3
+
+[node name="Lamp18" parent="." instance=ExtResource("3_s65vr")]
+position = Vector2(0, -27)
+intensity = 0.3
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(0, -99)
+enabled = false
+zoom = Vector2(2, 2)
+
+[node name="SprHiveGroundBossLower" type="Sprite2D" parent="."]
+z_index = -103
+position = Vector2(-1424, 103)
+texture = ExtResource("4_brrc7")
+centered = false
+
+[node name="SprHiveGroundBossLower2" type="Sprite2D" parent="SprHiveGroundBossLower"]
+position = Vector2(960, 0)
+texture = ExtResource("4_brrc7")
+centered = false
+
+[node name="SprHiveGroundBossLower3" type="Sprite2D" parent="SprHiveGroundBossLower"]
+position = Vector2(1920, 0)
+texture = ExtResource("4_brrc7")
+centered = false
+
+[node name="SprHiveGroundBossLower4" type="Sprite2D" parent="SprHiveGroundBossLower"]
+z_index = 200
+position = Vector2(0, -67)
+texture = ExtResource("4_brrc7")
+centered = false
+
+[node name="SprHiveGroundBossLower5" type="Sprite2D" parent="SprHiveGroundBossLower"]
+z_index = 205
+position = Vector2(960, -67)
+texture = ExtResource("4_brrc7")
+centered = false
+
+[node name="SprHiveGroundBossLower6" type="Sprite2D" parent="SprHiveGroundBossLower"]
+z_index = 200
+position = Vector2(1920, -67)
+texture = ExtResource("4_brrc7")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(16, 123)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_6sg2k")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(16, 123)
+collision_layer = 258
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource("RectangleShape2D_6sg2k")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-1231, -33)
+collision_layer = 257
+collision_mask = 257
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(495, -1666)
+shape = SubResource("RectangleShape2D_ko7gg")
+
+[node name="RightwALL" type="StaticBody2D" parent="."]
+position = Vector2(1228, -33)
+collision_layer = 257
+collision_mask = 257
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightwALL"]
+position = Vector2(-356, -1666)
+shape = SubResource("RectangleShape2D_ko7gg")
+
+[node name="Pillar" parent="." instance=ExtResource("8_yurel")]
+position = Vector2(-408, -16)
+
+[node name="Pillar2" parent="." instance=ExtResource("8_yurel")]
+position = Vector2(-584, -16)
+
+[node name="Pillar3" parent="." instance=ExtResource("8_yurel")]
+position = Vector2(717, -16)
+
+[node name="Pillar4" parent="." instance=ExtResource("8_yurel")]
+position = Vector2(541, -16)
+
+[node name="player" parent="." instance=ExtResource("5_tmqxf")]
+position = Vector2(-48, -16)
+
+[node name="caramel" parent="." instance=ExtResource("7_sq3cf")]
+position = Vector2(52, -16)
+
+[node name="beeBomb2" parent="." instance=ExtResource("9_3hh13")]
+position = Vector2(-272, -176)
+
+[node name="beeBomb3" parent="." instance=ExtResource("9_3hh13")]
+position = Vector2(-464, -256)
+
+[node name="beeBomb5" parent="." instance=ExtResource("9_3hh13")]
+position = Vector2(24, -256)
+
+[node name="beeBomb6" parent="." instance=ExtResource("9_3hh13")]
+position = Vector2(-168, -256)
+
+[node name="beeBomb7" parent="." instance=ExtResource("9_3hh13")]
+position = Vector2(-360, -256)
+
+[node name="beeBomb8" parent="." instance=ExtResource("9_3hh13")]
+position = Vector2(-552, -256)
+
+[node name="beeBomb13" parent="." instance=ExtResource("9_3hh13")]
+position = Vector2(-664, -256)
+
+[node name="beeBomb9" parent="." instance=ExtResource("9_3hh13")]
+position = Vector2(784, -256)
+
+[node name="beeBomb11" parent="." instance=ExtResource("9_3hh13")]
+position = Vector2(696, -256)
+
+[node name="beeBomb10" parent="." instance=ExtResource("9_3hh13")]
+position = Vector2(496, -176)
+
+[node name="beeBomb12" parent="." instance=ExtResource("9_3hh13")]
+position = Vector2(112, -176)
+
+[node name="beeBomb14" parent="." instance=ExtResource("9_3hh13")]
+position = Vector2(600, -256)
+
+[node name="beeBomb15" parent="." instance=ExtResource("9_3hh13")]
+position = Vector2(408, -256)
+
+[node name="beeBomb16" parent="." instance=ExtResource("9_3hh13")]
+position = Vector2(216, -256)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="caramelHP" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(728, 40)
+scale = Vector2(2, 2)
+texture = ExtResource("19_gex17")
+centered = false
+hframes = 11
+
+[node name="whiteFade" type="ColorRect" parent="CanvasLayer2"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -391.0
+offset_top = -180.0
+offset_right = 1399.0
+offset_bottom = 789.0
+
+[node name="CaramelSpeech" parent="CanvasLayer2" instance=ExtResource("20_k85rt")]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
+color = Color(0.164706, 0.129412, 0.4, 1)
+blend_mode = 2
+range_layer_min = -101
+
+[node name="energyReplenisher" parent="." instance=ExtResource("20_savsw")]
+position = Vector2(-200, -75)
+
+[node name="energyReplenisher2" parent="." instance=ExtResource("20_savsw")]
+position = Vector2(192, -75)
+
+[node name="vsScreen" parent="." instance=ExtResource("21_wwcxb")]
+boss = 2
+
+[node name="Pantcake" type="AnimatedSprite2D" parent="."]
+position = Vector2(888, -18)
+sprite_frames = SubResource("SpriteFrames_stq8q")
+animation = &"scared"
+autoplay = "default"
+
+[node name="pantcakeCutsceneTrigger" type="Area2D" parent="."]
+position = Vector2(702, -23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pantcakeCutsceneTrigger"]
+position = Vector2(72, -401.5)
+shape = SubResource("RectangleShape2D_epkux")
+disabled = true
+
+[node name="ZombieCaramel" parent="." instance=ExtResource("25_6y30k")]
+visible = false
+position = Vector2(554, -35)
+
+[node name="LeftSide" type="Area2D" parent="."]
+position = Vector2(-674, -11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSide"]
+position = Vector2(120, -143)
+shape = SubResource("RectangleShape2D_lfdrl")
+
+[node name="RightSide" type="Area2D" parent="."]
+position = Vector2(482, -11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightSide"]
+position = Vector2(206, -143.5)
+shape = SubResource("RectangleShape2D_lfdrl")
+
+[connection signal="body_entered" from="pantcakeCutsceneTrigger" to="." method="_on_pantcake_cutscene_trigger_body_entered"]
+[connection signal="body_entered" from="LeftSide" to="." method="_on_left_side_body_entered"]
+[connection signal="body_exited" from="LeftSide" to="." method="_on_left_side_body_exited"]
+[connection signal="body_entered" from="RightSide" to="." method="_on_right_side_body_entered"]
+[connection signal="body_exited" from="RightSide" to="." method="_on_right_side_body_exited"]

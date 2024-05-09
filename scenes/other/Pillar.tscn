@@ -1,0 +1,205 @@
+[gd_scene load_steps=10 format=3 uid="uid://d4go5qjxddx2v"]
+
+[ext_resource type="Script" path="res://scripts/Pillar.gd" id="1_78kk1"]
+[ext_resource type="Texture2D" uid="uid://cgucqbux7v6v2" path="res://sprites/other/spr_pillar_bottom.png" id="1_r4jvh"]
+[ext_resource type="Texture2D" uid="uid://c3h3da521iul5" path="res://sprites/other/spr_pillar_middle.png" id="2_bwqv0"]
+[ext_resource type="Texture2D" uid="uid://bpgjjn8ae1ef4" path="res://sprites/other/spr_pillar_top.png" id="3_br58p"]
+[ext_resource type="Texture2D" uid="uid://b5m6tj362h2p" path="res://sprites/obstacles/spr_pillarParticle.png" id="4_5hgo6"]
+[ext_resource type="AudioStream" uid="uid://d2fb8tkqjc6n6" path="res://sounds/obstacles/sfx_crateBreak.wav" id="6_o4ydo"]
+[ext_resource type="AudioStream" uid="uid://4nmikqp58sim" path="res://sounds/obstacles/sfx_pillarBreak.wav" id="7_l2mrj"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_n1sme"]
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhfv1"]
+size = Vector2(40, 592)
+
+[node name="Pillar" type="Node2D"]
+position = Vector2(136, 560)
+script = ExtResource("1_78kk1")
+
+[node name="Bottom" type="Sprite2D" parent="."]
+texture = ExtResource("1_r4jvh")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Bottom"]
+material = SubResource("CanvasItemMaterial_n1sme")
+emitting = false
+amount = 12
+lifetime = 0.8
+one_shot = true
+speed_scale = 0.5
+explosiveness = 1.0
+randomness = 0.95
+lifetime_randomness = 0.45
+texture = ExtResource("4_5hgo6")
+emission_shape = 1
+emission_sphere_radius = 0.01
+direction = Vector2(-500, -500)
+spread = 48.69
+initial_velocity_min = 112.14
+initial_velocity_max = 289.71
+scale_amount_min = 0.2
+scale_amount_max = 1.2
+anim_speed_min = 4.0
+anim_speed_max = 6.0
+
+[node name="Middle" type="Sprite2D" parent="."]
+position = Vector2(0, -80)
+texture = ExtResource("2_bwqv0")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 128)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Middle"]
+material = SubResource("CanvasItemMaterial_n1sme")
+emitting = false
+amount = 12
+lifetime = 0.8
+one_shot = true
+speed_scale = 0.5
+explosiveness = 1.0
+randomness = 0.95
+lifetime_randomness = 0.45
+texture = ExtResource("4_5hgo6")
+emission_shape = 1
+emission_sphere_radius = 0.01
+direction = Vector2(-500, -500)
+spread = 48.69
+initial_velocity_min = 112.14
+initial_velocity_max = 289.71
+scale_amount_min = 0.2
+scale_amount_max = 1.2
+anim_speed_min = 4.0
+anim_speed_max = 6.0
+
+[node name="Middle2" type="Sprite2D" parent="."]
+position = Vector2(0, -208)
+texture = ExtResource("2_bwqv0")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 128)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Middle2"]
+material = SubResource("CanvasItemMaterial_n1sme")
+emitting = false
+amount = 12
+lifetime = 0.8
+one_shot = true
+speed_scale = 0.5
+explosiveness = 1.0
+randomness = 0.95
+lifetime_randomness = 0.45
+texture = ExtResource("4_5hgo6")
+emission_shape = 1
+emission_sphere_radius = 0.01
+direction = Vector2(-500, -500)
+spread = 48.69
+initial_velocity_min = 112.14
+initial_velocity_max = 409.01
+scale_amount_min = 0.2
+scale_amount_max = 1.2
+anim_speed_min = 4.0
+anim_speed_max = 6.0
+
+[node name="Middle3" type="Sprite2D" parent="."]
+position = Vector2(0, -336)
+texture = ExtResource("2_bwqv0")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 128)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Middle3"]
+material = SubResource("CanvasItemMaterial_n1sme")
+emitting = false
+amount = 12
+lifetime = 0.8
+one_shot = true
+speed_scale = 0.5
+explosiveness = 1.0
+randomness = 0.95
+lifetime_randomness = 0.45
+texture = ExtResource("4_5hgo6")
+emission_shape = 1
+emission_sphere_radius = 0.01
+direction = Vector2(-500, -500)
+spread = 48.69
+initial_velocity_min = 112.14
+initial_velocity_max = 409.01
+scale_amount_min = 0.2
+scale_amount_max = 1.2
+anim_speed_min = 4.0
+anim_speed_max = 6.0
+
+[node name="Middle4" type="Sprite2D" parent="."]
+position = Vector2(0, -464)
+texture = ExtResource("2_bwqv0")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 128)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Middle4"]
+material = SubResource("CanvasItemMaterial_n1sme")
+emitting = false
+amount = 12
+lifetime = 0.8
+one_shot = true
+speed_scale = 0.5
+explosiveness = 1.0
+randomness = 0.95
+lifetime_randomness = 0.45
+texture = ExtResource("4_5hgo6")
+emission_shape = 1
+emission_sphere_radius = 0.01
+direction = Vector2(-500, -500)
+spread = 48.69
+initial_velocity_min = 112.14
+initial_velocity_max = 409.01
+scale_amount_min = 0.2
+scale_amount_max = 1.2
+anim_speed_min = 4.0
+anim_speed_max = 6.0
+
+[node name="Top" type="Sprite2D" parent="."]
+position = Vector2(0, -544)
+texture = ExtResource("3_br58p")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Top"]
+material = SubResource("CanvasItemMaterial_n1sme")
+emitting = false
+amount = 12
+lifetime = 0.8
+one_shot = true
+speed_scale = 0.5
+explosiveness = 1.0
+randomness = 0.95
+lifetime_randomness = 0.45
+texture = ExtResource("4_5hgo6")
+emission_shape = 1
+emission_sphere_radius = 0.01
+direction = Vector2(-500, -500)
+spread = 48.69
+initial_velocity_min = 112.14
+initial_velocity_max = 409.01
+scale_amount_min = 0.2
+scale_amount_max = 1.2
+anim_speed_min = 4.0
+anim_speed_max = 6.0
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -272)
+shape = SubResource("RectangleShape2D_dhfv1")
+
+[node name="Break" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_o4ydo")
+volume_db = -4.657
+pitch_scale = 0.55
+bus = &"Sound"
+
+[node name="Break2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_l2mrj")
+volume_db = -6.208
+bus = &"Sound"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

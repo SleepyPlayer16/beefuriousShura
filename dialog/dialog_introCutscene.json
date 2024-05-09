@@ -1,0 +1,46 @@
+[
+  { "CharacterLeft": "Shura", "CharacterRight": "Pantcake" },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "¡No sabes lo tanto que me alegra pasar tiempo contigo y los demás!",
+	"Emotion": "Cat",
+	"Side": "Left"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "¡Podría estar aquí todo el día!",
+	"Emotion": "Happy",
+	"Side": "Left"
+  },
+  {
+	"Name": "Pantcake",
+	"SecondaryName": "",
+	"Text": "¡Yo igual!",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "Pantcake",
+	"SecondaryName": "",
+	"Text": "Pero, creo que debemos enseñar a los nuevos miembros a andar en moto una vez terminemos, ¿No crees?",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "Sí, no lo he olvidado.",
+	"Emotion": "Happy",
+	"Side": "Left"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "¡Hay que apresurarnos entonces!",
+	"Emotion": "Happy",
+	"Side": "Left"
+  }
+]
+

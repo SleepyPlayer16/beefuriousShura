@@ -1,0 +1,10 @@
+[
+	{"CharacterLeft":"Shura", "CharacterRight":"Mai"},
+	{"Name":"Shura", "SecondaryName": "","Text":"!M-Mai! Secuestraron a uno de mis Pankokis...", "Emotion": "Rock", "Side": "Left"},
+	{"Name":"Shura", "SecondaryName": "","Text":"!No sé que hacer!", "Emotion": "Rock", "Side": "Left"},
+	{"Name":"Mai", "SecondaryName": "","Text":"Shura... Por más que las cosas parezcan derrumbarse a tu alrededor, !no te dejes vencer!", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Mai", "SecondaryName": "","Text":"Cuando sientas que no puedes continuar, ¡recuerda que estamos contigo!", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Mai", "SecondaryName": "","Text":"¡Estoy segura de que lograrás recuperar a tu Pankoki!", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Mai", "SecondaryName": "","Text":"*Entrega un accesorio con una fotito de las VJiNs*", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Shura", "SecondaryName": "","Text":"Gracias Mai, ¡la guardaré muy bien!", "Emotion": "Rock", "Side": "Left"},
+]

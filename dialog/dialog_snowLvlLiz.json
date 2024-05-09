@@ -1,0 +1,55 @@
+[
+  {
+	"CharacterLeft": "Shura",
+	"CharacterRight": "Liz"
+  },
+  {
+	"Name": "Liz",
+	"SecondaryName": "",
+	"Text": "¡Holi!",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "¡Hola!",
+	"Emotion": "Happy",
+	"Side": "Left"
+  },
+  {
+	"Name": "Liz",
+	"SecondaryName": "",
+	"Text": "¡Esta dimensión es muy bonita!",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "¿Cómo?",
+	"Emotion": "Normal",
+	"Side": "Left"
+  },
+  {
+	"Name": "Liz",
+	"SecondaryName": "",
+	"Text": "Vengo de una dimensión diferente a la tuya, ¡me gustaría explicar más pero es una larga historia!",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "Liz",
+	"SecondaryName": "",
+	"Text": "Bueno, seguiré explorando este lugar. ¡Nos vemos!",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "Que día más extraño...",
+	"Emotion": "Normal",
+	"Side": "Left"
+  }
+]

@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://ofloxxxfx4h2"]
+
+[ext_resource type="Texture2D" uid="uid://m7pw0xiwqbvw" path="res://sprites/levels/breakableBlock.png" id="1_ikpod"]
+[ext_resource type="Script" path="res://scripts/BreakableCrate.gd" id="1_k0k3q"]
+[ext_resource type="Texture2D" uid="uid://bkwyehty7n2xa" path="res://sprites/obstacles/spr_crateParticle.png" id="3_58eot"]
+[ext_resource type="AudioStream" uid="uid://d2fb8tkqjc6n6" path="res://sounds/obstacles/sfx_crateBreak.wav" id="4_6tl7p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftpua"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbkiv"]
+size = Vector2(32, 3)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lccj3"]
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[node name="BreakableCrate" type="StaticBody2D"]
+script = ExtResource("1_k0k3q")
+
+[node name="BreakableBlock" type="Sprite2D" parent="."]
+texture = ExtResource("1_ikpod")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ftpua")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 16.5)
+shape = SubResource("RectangleShape2D_kbkiv")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_lccj3")
+emitting = false
+amount = 12
+lifetime = 0.8
+one_shot = true
+speed_scale = 0.5
+explosiveness = 1.0
+randomness = 0.95
+lifetime_randomness = 0.45
+texture = ExtResource("3_58eot")
+emission_shape = 1
+emission_sphere_radius = 0.01
+direction = Vector2(1, -2)
+spread = 168.22
+initial_velocity_min = 112.14
+initial_velocity_max = 289.71
+scale_amount_min = 0.2
+scale_amount_max = 1.2
+anim_speed_min = 4.0
+anim_speed_max = 6.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6tl7p")
+volume_db = -4.0
+bus = &"Sound"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

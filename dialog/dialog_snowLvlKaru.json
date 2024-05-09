@@ -1,0 +1,9 @@
+[
+	{"CharacterLeft":"Shura", "CharacterRight":"Karu"},
+	{"Name":"Karu", "SecondaryName": "","Text":"...", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Karu", "SecondaryName": "","Text":"...!", "Emotion": "VerySad", "Side": "Right"},
+	{"Name":"Karu", "SecondaryName": "","Text":"......", "Emotion": "Sad", "Side": "Right"},
+	{"Name":"Shura", "SecondaryName": "","Text":"Ehh...", "Emotion": "Cringe", "Side": "Left"},
+	{"Name":"Shura", "SecondaryName": "","Text":"Si buscas a una tipa vestida de rana, está por allá, siguiendo el camino detrás de mi.", "Emotion": "Normal", "Side": "Left"},
+	{"Name":"Karu", "SecondaryName": "","Text":"!!!", "Emotion": "Happy", "Side": "Right"},
+]

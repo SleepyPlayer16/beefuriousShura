@@ -1,0 +1,232 @@
+[gd_scene load_steps=17 format=3 uid="uid://dqhpx5chsqu4g"]
+
+[ext_resource type="Script" path="res://scripts/dialogue_handler.gd" id="1_11rc3"]
+[ext_resource type="Texture2D" uid="uid://8hcgi3cjk7bt" path="res://sprites/shura/shuraVSScreen.png" id="1_smd0m"]
+[ext_resource type="Texture2D" uid="uid://bkgd2b36i5fjf" path="res://sprites/hud/TextBox.png" id="3_ucmir"]
+[ext_resource type="FontFile" uid="uid://bhhdifxwdyq0" path="res://fonts/DigitalDisco.ttf" id="4_quxq3"]
+[ext_resource type="AudioStream" uid="uid://cvp4sg1sx8vnf" path="res://sounds/sfx_textBoxBeep.wav" id="5_8ridf"]
+[ext_resource type="Texture2D" uid="uid://xm8augvlskib" path="res://sprites/hud/spr_textBoxSpacePress.png" id="5_crbf4"]
+[ext_resource type="AudioStream" uid="uid://ciu5helle5rxy" path="res://sounds/voiceClips/chairgtables/chairDiag1.ogg" id="7_c876c"]
+[ext_resource type="AudioStream" uid="uid://c4dsgksfkisl8" path="res://sounds/voiceClips/chairgtables/chairDiag2.ogg" id="8_1181n"]
+[ext_resource type="AudioStream" uid="uid://jhsy4e6kar42" path="res://sounds/voiceClips/chairgtables/chairDiag3.ogg" id="9_31gsw"]
+[ext_resource type="AudioStream" uid="uid://8tdskakx8aa" path="res://sounds/voiceClips/chairgtables/chairDiag4.ogg" id="10_aoup3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ragvt"]
+atlas = ExtResource("5_crbf4")
+region = Rect2(0, 0, 315, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hs2hd"]
+atlas = ExtResource("5_crbf4")
+region = Rect2(315, 0, 315, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4jfiq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ragvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hs2hd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="Animation" id="Animation_d8jxq"]
+resource_name = "In"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/A:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.233258, 1),
+"update": 0,
+"values": [Vector2(-268, 0), Vector2(-32, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/B:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.233258, 0.101532),
+"update": 0,
+"values": [Vector2(480, 0), Vector2(244, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/TextBox:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.170755, 1),
+"update": 0,
+"values": [Vector2(240, 268), Vector2(240, 234)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/TextBox:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.267943, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5n7vy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/A:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-268, -4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/B:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(480, -4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/TextBox:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(240, 268)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/TextBox:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_flfvy"]
+_data = {
+"In": SubResource("Animation_d8jxq"),
+"RESET": SubResource("Animation_5n7vy")
+}
+
+[node name="dialogue_handler" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_11rc3")
+dialogPath = "res://dialog/dialog_snowLvlFroo.json"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="A" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(-268, -4)
+texture = ExtResource("1_smd0m")
+centered = false
+
+[node name="B" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(480, -4)
+centered = false
+
+[node name="C" type="Sprite2D" parent="CanvasLayer/B"]
+position = Vector2(92, 0)
+centered = false
+
+[node name="TextBox" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(240, 268)
+texture = ExtResource("3_ucmir")
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/TextBox"]
+offset_left = -144.0
+offset_top = -24.0
+offset_right = 144.0
+offset_bottom = 28.0
+theme_override_fonts/normal_font = ExtResource("4_quxq3")
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
+metadata/_edit_lock_ = true
+
+[node name="Name" type="RichTextLabel" parent="CanvasLayer/TextBox"]
+clip_contents = false
+offset_left = -144.0
+offset_top = -40.0
+offset_right = 144.0
+offset_bottom = 4.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("4_quxq3")
+text = "Name"
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/TextBox"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_4jfiq")
+autoplay = "default"
+frame_progress = 0.194325
+
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_flfvy")
+}
+autoplay = "In"
+
+[node name="VoiceBeep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8ridf")
+volume_db = -2.0
+bus = &"Sound"
+
+[node name="ChairDiag1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_c876c")
+volume_db = 9.0
+bus = &"Sound"
+
+[node name="ChairDiag2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_1181n")
+volume_db = 9.0
+bus = &"Sound"
+
+[node name="ChairDiag3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_31gsw")
+volume_db = 9.0
+bus = &"Sound"
+
+[node name="ChairDiag4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_aoup3")
+volume_db = 7.0
+bus = &"Sound"

@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://bkc8omigpd7dx"]
+
+[ext_resource type="Script" path="res://scripts/froo.gd" id="1_tdgck"]
+[ext_resource type="Texture2D" uid="uid://blgl583jxclix" path="res://sprites/yukine/spr_yukineFree.png" id="2_3i812"]
+[ext_resource type="Texture2D" uid="uid://cpqvrlsc0kbkc" path="res://sprites/yukine/spr_yukineJump.png" id="3_qfgax"]
+[ext_resource type="Texture2D" uid="uid://1w1qnweinb3m" path="res://sprites/yukine/spr_yukineScared.png" id="3_qj11x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6x6a"]
+atlas = ExtResource("2_3i812")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7rui"]
+atlas = ExtResource("2_3i812")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wr0uu"]
+atlas = ExtResource("3_qfgax")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xga84"]
+atlas = ExtResource("3_qj11x")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lc0hj"]
+atlas = ExtResource("3_qj11x")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbnoi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6x6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7rui")
+}],
+"loop": false,
+"name": &"default",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wr0uu")
+}],
+"loop": true,
+"name": &"runnnnn",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xga84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lc0hj")
+}],
+"loop": true,
+"name": &"scared",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47gdg"]
+size = Vector2(22, 10)
+
+[node name="yukine" type="Node2D"]
+script = ExtResource("1_tdgck")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-16, -9)
+sprite_frames = SubResource("SpriteFrames_mbnoi")
+animation = &"scared"
+autoplay = "scared"
+centered = false
+offset = Vector2(-16, 0)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-11, 27)
+shape = SubResource("RectangleShape2D_47gdg")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

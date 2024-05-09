@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://diqmvnd1om7x"]
+
+[ext_resource type="Texture2D" uid="uid://hcu336vclgu4" path="res://sprites/other/spr_hitbox.png" id="1_i3fj8"]
+[ext_resource type="Script" path="res://scripts/spikeBall.gd" id="2_f3lta"]
+[ext_resource type="AudioStream" uid="uid://c7ro0anmvl8da" path="res://sounds/sfx_bubbleHit.wav" id="3_7fciq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_clnjf"]
+radius = 16.0
+
+[node name="blastZone" type="Sprite2D"]
+modulate = Color(1, 1, 1, 0.415686)
+texture = ExtResource("1_i3fj8")
+script = ExtResource("2_f3lta")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_clnjf")
+disabled = true
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7fciq")
+bus = &"Sound"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

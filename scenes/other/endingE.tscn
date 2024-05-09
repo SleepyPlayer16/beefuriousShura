@@ -1,0 +1,316 @@
+[gd_scene load_steps=32 format=3 uid="uid://cmduavawrbkve"]
+
+[ext_resource type="Script" path="res://scripts/endingE.gd" id="1_cgp74"]
+[ext_resource type="Texture2D" uid="uid://ylixnf3vrs65" path="res://sprites/other/spr_endingCrater.png" id="1_cjkr2"]
+[ext_resource type="Texture2D" uid="uid://bntiiomjh6tp4" path="res://sprites/other/spr_endingE.png" id="1_nmgm1"]
+[ext_resource type="Texture2D" uid="uid://cjdskgghr2px2" path="res://sprites/other/spr_angelTechVirus.png" id="3_lmndo"]
+[ext_resource type="AudioStream" uid="uid://r4wsls58d0xf" path="res://music/mus_plague.ogg" id="4_7d1tq"]
+[ext_resource type="AudioStream" uid="uid://cw61lyn88213w" path="res://sounds/sfx_static.wav" id="6_aslhd"]
+[ext_resource type="Texture2D" uid="uid://6mnqblsg1tf3" path="res://sprites/other/Static.png" id="6_k3fcs"]
+[ext_resource type="AudioStream" uid="uid://cncx58jwfx8ux" path="res://sounds/sfx_glitchEffect.wav" id="7_pn274"]
+[ext_resource type="Texture2D" uid="uid://utem0hf0voof" path="res://sprites/other/spr_sToSkip.png" id="9_46ytb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gv2el"]
+atlas = ExtResource("1_nmgm1")
+region = Rect2(2400, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhaj4"]
+atlas = ExtResource("1_nmgm1")
+region = Rect2(0, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed6q4"]
+atlas = ExtResource("1_nmgm1")
+region = Rect2(0, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tacu0"]
+atlas = ExtResource("1_nmgm1")
+region = Rect2(480, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_us32g"]
+atlas = ExtResource("1_nmgm1")
+region = Rect2(960, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_earge"]
+atlas = ExtResource("1_nmgm1")
+region = Rect2(1440, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nugjc"]
+atlas = ExtResource("1_nmgm1")
+region = Rect2(1920, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvm4p"]
+atlas = ExtResource("1_cjkr2")
+region = Rect2(0, 0, 480, 270)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y5ebg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gv2el")
+}],
+"loop": true,
+"name": &"AngelTech_Virus",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhaj4")
+}],
+"loop": true,
+"name": &"caramelDead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ed6q4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tacu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_us32g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_earge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nugjc")
+}],
+"loop": false,
+"name": &"caramel_what",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvm4p")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3anba"]
+atlas = ExtResource("3_lmndo")
+region = Rect2(0, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpyvk"]
+atlas = ExtResource("3_lmndo")
+region = Rect2(480, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnaiw"]
+atlas = ExtResource("3_lmndo")
+region = Rect2(960, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dic34"]
+atlas = ExtResource("3_lmndo")
+region = Rect2(1440, 0, 480, 270)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dpr28"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"Nothing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3anba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpyvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnaiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dic34")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnmw2"]
+atlas = ExtResource("6_k3fcs")
+region = Rect2(0, 0, 800, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uw0v6"]
+atlas = ExtResource("6_k3fcs")
+region = Rect2(800, 0, 800, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5otlb"]
+atlas = ExtResource("6_k3fcs")
+region = Rect2(1600, 0, 800, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_in5jc"]
+atlas = ExtResource("6_k3fcs")
+region = Rect2(2400, 0, 800, 600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k7w4v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnmw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uw0v6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5otlb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_in5jc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="Animation" id="Animation_pxo0g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_g4yq5"]
+resource_name = "Transition"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hnudf"]
+_data = {
+"RESET": SubResource("Animation_pxo0g"),
+"Transition": SubResource("Animation_g4yq5")
+}
+
+[node name="endingE" type="Node2D"]
+script = ExtResource("1_cgp74")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(480, 272)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_y5ebg")
+autoplay = "default"
+offset = Vector2(0, -1)
+
+[node name="AngelTech_Virus" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(480, 272)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_dpr28")
+autoplay = "default"
+offset = Vector2(0, -1)
+
+[node name="mus" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7d1tq")
+bus = &"Music"
+
+[node name="sfxStatic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_aslhd")
+bus = &"Sound"
+
+[node name="sfxGlitch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_pn274")
+bus = &"Sound"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 1008.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 1)
+
+[node name="Static" type="AnimatedSprite2D" parent="."]
+position = Vector2(500, 280)
+scale = Vector2(1.27, 1)
+sprite_frames = SubResource("SpriteFrames_k7w4v")
+autoplay = "default"
+frame_progress = 0.56775
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+offset_right = 1008.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 4.2
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hnudf")
+}
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="SkipColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = 999
+offset_left = -184.0
+offset_top = -152.0
+offset_right = 1144.0
+offset_bottom = 668.0
+color = Color(0, 0, 0, 1)
+
+[node name="SprSToSkip" type="Sprite2D" parent="."]
+position = Vector2(664, 512)
+scale = Vector2(2, 2)
+texture = ExtResource("9_46ytb")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]

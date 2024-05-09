@@ -1,0 +1,128 @@
+[gd_scene load_steps=13 format=3 uid="uid://ddwvbaqcyghg"]
+
+[ext_resource type="Texture2D" uid="uid://db2ojlxmcaiq8" path="res://sprites/nisha/spr_nishaShield.png" id="1_fxgch"]
+[ext_resource type="Script" path="res://scripts/nishield.gd" id="2_0kpun"]
+[ext_resource type="AudioStream" uid="uid://h80l07vcvwju" path="res://sounds/sfx_bubbleBreakFull.wav" id="3_qw1b0"]
+[ext_resource type="AudioStream" uid="uid://dvh4erc1vuwkk" path="res://sounds/sfx_bubbleSummonFull.wav" id="4_x7a4k"]
+[ext_resource type="AudioStream" uid="uid://c7ro0anmvl8da" path="res://sounds/sfx_bubbleHit.wav" id="4_ygucv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v50mo"]
+atlas = ExtResource("1_fxgch")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wswf"]
+atlas = ExtResource("1_fxgch")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_778qu"]
+atlas = ExtResource("1_fxgch")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbqcs"]
+atlas = ExtResource("1_fxgch")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uado3"]
+atlas = ExtResource("1_fxgch")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdg22"]
+atlas = ExtResource("1_fxgch")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wll4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v50mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wswf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_778qu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbqcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uado3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdg22")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"null",
+"speed": 5.0
+}]
+
+[node name="nishield" type="AnimatedSprite2D"]
+z_index = 200
+rotation = 6.28319
+sprite_frames = SubResource("SpriteFrames_8wll4")
+autoplay = "default"
+script = ExtResource("2_0kpun")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(-16, 0)
+emitting = false
+amount = 12
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 2
+emission_sphere_radius = 0.01
+direction = Vector2(20, 20)
+spread = 140.66
+gravity = Vector2(0, 200)
+initial_velocity_min = 55.95
+initial_velocity_max = 377.63
+angular_velocity_max = 503.5
+scale_amount_min = 2.0
+scale_amount_max = 8.0
+color = Color(1, 0, 0.137255, 1)
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+position = Vector2(8, -8)
+emitting = false
+amount = 12
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 2
+emission_sphere_radius = 0.01
+direction = Vector2(20, 20)
+spread = 140.66
+gravity = Vector2(0, 200)
+initial_velocity_min = 55.95
+initial_velocity_max = 377.63
+angular_velocity_max = 503.5
+scale_amount_min = 2.0
+scale_amount_max = 8.0
+color = Color(0.203922, 0.235294, 1, 1)
+
+[node name="BubbleBreak" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qw1b0")
+bus = &"Sound"
+
+[node name="BubbleHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ygucv")
+volume_db = 2.0
+bus = &"Sound"
+
+[node name="BubbleSummon" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_x7a4k")
+autoplay = true
+bus = &"Sound"

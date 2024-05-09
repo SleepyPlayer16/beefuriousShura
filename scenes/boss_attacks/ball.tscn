@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://bkgbqhiacf062"]
+
+[ext_resource type="Texture2D" uid="uid://bf215soatssqu" path="res://sprites/rosa/spr_ball.png" id="1_4ucy1"]
+[ext_resource type="Script" path="res://scripts/ball.gd" id="1_5ow4x"]
+[ext_resource type="PackedScene" uid="uid://bkrrmx2twhic1" path="res://scenes/obstacles/blastZone.tscn" id="2_gev2l"]
+[ext_resource type="AudioStream" uid="uid://cflysuss735iu" path="res://sounds/sfx_ballWallCollide.wav" id="4_jpemk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7q87q"]
+atlas = ExtResource("1_4ucy1")
+region = Rect2(0, 0, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23att"]
+atlas = ExtResource("1_4ucy1")
+region = Rect2(11, 0, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l5g0"]
+atlas = ExtResource("1_4ucy1")
+region = Rect2(22, 0, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1th3s"]
+atlas = ExtResource("1_4ucy1")
+region = Rect2(33, 0, 11, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_doy0o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7q87q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23att")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l5g0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1th3s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0uor0"]
+radius = 4.0
+
+[node name="ball" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_5ow4x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_doy0o")
+autoplay = "default"
+frame_progress = 0.407
+
+[node name="blastZone" parent="." instance=ExtResource("2_gev2l")]
+visible = false
+position = Vector2(-3, -3)
+scale = Vector2(0.1875, 0.1875)
+damage = 1
+damageType = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0uor0")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.15
+
+[node name="WallCollide" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jpemk")
+volume_db = -9.0
+bus = &"Sound"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

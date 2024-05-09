@@ -1,0 +1,113 @@
+[gd_scene load_steps=5 format=3 uid="uid://5djhmpsch365"]
+
+[ext_resource type="Texture2D" uid="uid://bcfibisol3b0g" path="res://sprites/caramel/phase2/spr_dust.png" id="1_7c1gq"]
+
+[sub_resource type="Animation" id="Animation_qq1r5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SprDust:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SprDust2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4kbtp"]
+resource_name = "dustMove"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SprDust:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-200, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SprDust2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 0), Vector2(1160, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.7, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rx76u"]
+_data = {
+"RESET": SubResource("Animation_qq1r5"),
+"dustMove": SubResource("Animation_4kbtp")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="dust" type="Node2D" parent="."]
+position = Vector2(-227, 0)
+
+[node name="SprDust" type="Sprite2D" parent="dust"]
+modulate = Color(0.760784, 0.839216, 0.823529, 1)
+texture = ExtResource("1_7c1gq")
+centered = false
+
+[node name="SprDust2" type="Sprite2D" parent="dust"]
+position = Vector2(960, 0)
+scale = Vector2(-1, 1)
+texture = ExtResource("1_7c1gq")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="dust"]
+libraries = {
+"": SubResource("AnimationLibrary_rx76u")
+}
+autoplay = "dustMove"
+speed_scale = 0.8

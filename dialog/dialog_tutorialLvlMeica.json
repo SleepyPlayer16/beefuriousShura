@@ -1,0 +1,11 @@
+[
+	{"CharacterLeft":"Shura", "CharacterRight":"Meica"},
+	{"Name":"Meica", "SecondaryName": "","Text":"¡Pero si es Shura!", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Shura", "SecondaryName": "","Text":"Wtf perdedora05", "Emotion": "Cat", "Side": "Left"},
+	{"Name":"Meica", "SecondaryName": "","Text":"¡¡Oye!!", "Emotion": "Angry", "Side": "Right"},
+	{"Name":"Shura", "SecondaryName": "","Text":"Jeje", "Emotion": "Cat", "Side": "Left"},
+	{"Name":"Meica", "SecondaryName": "","Text":"Como sea, si durante una pelea te sientes debil llamame con [D].", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Meica", "SecondaryName": "","Text":"¡Dejaré una planta en el suelo que te ayudará a curarte!", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Shura", "SecondaryName": "","Text":"¡Gracias perdedora05, lo tendré en mente!", "Emotion": "Cat", "Side": "Left"},
+	{"Name":"Meica", "SecondaryName": "","Text":"¡¡¡Hey, dejame en paz, que te dejo una planta que te haga daño eh!!!", "Emotion": "Angry", "Side": "Right"},
+]

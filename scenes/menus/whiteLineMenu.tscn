@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bldlun242dajm"]
+
+[ext_resource type="Texture2D" uid="uid://dbgv2ngw77p7h" path="res://sprites/main_menu/spr_mainMenuWhiteLine.png" id="1_ayaxy"]
+
+[node name="WhiteLineMenu" type="Sprite2D"]
+texture = ExtResource("1_ayaxy")

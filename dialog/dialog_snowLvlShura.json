@@ -1,0 +1,10 @@
+[
+  { "CharacterLeft": "Shura", "CharacterRight": "none" },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "¡Alto ahí!",
+	"Emotion": "Angry",
+	"Side": "Left"
+  }
+]

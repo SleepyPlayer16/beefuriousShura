@@ -1,0 +1,38 @@
+[
+  { "CharacterLeft": "Shura", "CharacterRight": "ChairGTables" },
+  {
+	"Name": "ChairGTables",
+	"SecondaryName": "",
+	"Text": "Ah, estás hecha un desastre. Sé lo que pasó con tan solo ver tus ojos.",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "ChairGTables",
+	"SecondaryName": "",
+	"Text": "Acabas de escapar de ese panal para salvar la vida de alguien, ¿no es así?",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "ChairGTables",
+	"SecondaryName": "",
+	"Text": "Pero, ¿y sí la criatura que acabas de salvar estaba siendo alimentada con los mejores snacks del mundo?",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "ChairGTables",
+	"SecondaryName": "",
+	"Text": "Es por eso que, ¡espero en verdad que hayas tomado toda la comida de ese lugar antes de que explote!",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "¿Qué?",
+	"Emotion": "Normal",
+	"Side": "Left"
+  },
+]

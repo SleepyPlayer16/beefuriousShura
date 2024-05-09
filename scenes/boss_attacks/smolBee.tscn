@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://bpesjifeffs02"]
+
+[ext_resource type="Texture2D" uid="uid://bgv4fueqyuq0g" path="res://sprites/obstacles/spr_smolBee.png" id="1_glp7n"]
+[ext_resource type="Script" path="res://scripts/smolBee.gd" id="1_j4k52"]
+[ext_resource type="PackedScene" uid="uid://bkrrmx2twhic1" path="res://scenes/obstacles/blastZone.tscn" id="3_468lj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4xxx"]
+atlas = ExtResource("1_glp7n")
+region = Rect2(0, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8s45d"]
+atlas = ExtResource("1_glp7n")
+region = Rect2(15, 0, 15, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_owaac"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4xxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8s45d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aemc4"]
+radius = 5.09902
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_daaf2"]
+size = Vector2(4, 4)
+
+[node name="smolBee" type="CharacterBody2D"]
+top_level = true
+collision_layer = 0
+collision_mask = 2
+floor_stop_on_slope = false
+script = ExtResource("1_j4k52")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_owaac")
+autoplay = "default"
+frame_progress = 0.196157
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_aemc4")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_daaf2")
+
+[node name="blastZone" parent="." instance=ExtResource("3_468lj")]
+position = Vector2(-6, -5)
+scale = Vector2(0.345276, 0.282776)
+damage = 1
+damageType = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

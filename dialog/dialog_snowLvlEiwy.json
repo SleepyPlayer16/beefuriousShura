@@ -1,0 +1,6 @@
+[
+	{"CharacterLeft":"Shura", "CharacterRight":"Eiwy"},
+	{"Name":"Eiwy", "SecondaryName": "","Text":"¡Chuwa! Finalmente te encontré, ¡tengo una entrega especial para tí! ¡Tú puedes!", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Eiwy", "SecondaryName": "","Text":"*Le entrega un patito de hule de la suerte*", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Shura", "SecondaryName": "","Text":"Gracias Eiwy, ¡cuidaré bien de él!", "Emotion": "Happy", "Side": "Left"},
+]

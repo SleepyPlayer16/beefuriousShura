@@ -1,0 +1,156 @@
+[gd_scene load_steps=21 format=3 uid="uid://5y1tx2ryl84y"]
+
+[ext_resource type="Texture2D" uid="uid://f47n4ulq21po" path="res://sprites/meica/spr_meicaPlant.png" id="1_7fime"]
+[ext_resource type="Script" path="res://scripts/meicaPlant.gd" id="1_sce3i"]
+[ext_resource type="Texture2D" uid="uid://rl6lmlsax5lt" path="res://sprites/meica/spr_meicaPlantHPGen.png" id="2_vxbhj"]
+[ext_resource type="AudioStream" uid="uid://7iria05onbip" path="res://sounds/sfx_hpSpawn.wav" id="4_bgx5x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjxkk"]
+atlas = ExtResource("1_7fime")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04pkj"]
+atlas = ExtResource("1_7fime")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ardj6"]
+atlas = ExtResource("1_7fime")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mycj"]
+atlas = ExtResource("2_vxbhj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ap70w"]
+atlas = ExtResource("2_vxbhj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilr8y"]
+atlas = ExtResource("2_vxbhj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_siupj"]
+atlas = ExtResource("2_vxbhj")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1itup"]
+atlas = ExtResource("2_vxbhj")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bet3a"]
+atlas = ExtResource("2_vxbhj")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wt75y"]
+atlas = ExtResource("2_vxbhj")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwq0s"]
+atlas = ExtResource("2_vxbhj")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lq7l1"]
+atlas = ExtResource("1_7fime")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bf3o"]
+atlas = ExtResource("1_7fime")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyjd2"]
+atlas = ExtResource("1_7fime")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hrun4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjxkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04pkj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ardj6")
+}],
+"loop": false,
+"name": &"Despawn",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mycj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ap70w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilr8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_siupj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1itup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bet3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wt75y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwq0s")
+}],
+"loop": false,
+"name": &"GenerateHP",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lq7l1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bf3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyjd2")
+}],
+"loop": false,
+"name": &"Spawn",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0q1k"]
+size = Vector2(6, 3)
+
+[node name="meicaPlant" type="CharacterBody2D"]
+position = Vector2(-1, 0)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_sce3i")
+
+[node name="plantSpr" type="AnimatedSprite2D" parent="."]
+position = Vector2(-16, -32)
+sprite_frames = SubResource("SpriteFrames_hrun4")
+animation = &"Despawn"
+autoplay = "Spawn"
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_g0q1k")
+disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="hpSpawn" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_bgx5x")
+volume_db = 5.0
+max_distance = 1000.0
+bus = &"Sound"
+
+[connection signal="animation_finished" from="plantSpr" to="." method="_on_plant_spr_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

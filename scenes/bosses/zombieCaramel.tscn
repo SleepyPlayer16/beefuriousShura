@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://cy8kwcr4i25cl"]
+
+[ext_resource type="Texture2D" uid="uid://8867heit37ho" path="res://sprites/caramel/spr_VirusStand.png" id="1_cbtp0"]
+[ext_resource type="Texture2D" uid="uid://bleyee5ujxg87" path="res://sprites/caramel/spr_VirusAttack.png" id="2_ip2xn"]
+[ext_resource type="AudioStream" uid="uid://dxteyb7h12gbl" path="res://sounds/finalB/airdash.wav" id="3_al8f7"]
+[ext_resource type="Script" path="res://scripts/zombieCaramel.gd" id="3_r70ap"]
+[ext_resource type="AudioStream" uid="uid://bqcl2majvvfev" path="res://sounds/finalB/sfx_dash2.wav" id="4_17h0g"]
+[ext_resource type="AudioStream" uid="uid://by4vwwast1b7n" path="res://sounds/finalB/sfx_finalBoom.wav" id="6_adn7t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_meg58"]
+atlas = ExtResource("2_ip2xn")
+region = Rect2(0, 0, 64, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktcni"]
+atlas = ExtResource("1_cbtp0")
+region = Rect2(0, 0, 64, 89)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lja8w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_meg58")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktcni")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyojl"]
+size = Vector2(47, 37)
+
+[node name="ZombieCaramel" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_lja8w")
+animation = &"attack"
+autoplay = "default"
+script = ExtResource("3_r70ap")
+
+[node name="Dash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_al8f7")
+volume_db = 2.0
+bus = &"Sound"
+
+[node name="Dash2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_17h0g")
+volume_db = 3.0
+pitch_scale = 1.5
+bus = &"Sound"
+
+[node name="Boom" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_adn7t")
+volume_db = -3.0
+bus = &"Sound"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3.5, 12.5)
+shape = SubResource("RectangleShape2D_uyojl")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

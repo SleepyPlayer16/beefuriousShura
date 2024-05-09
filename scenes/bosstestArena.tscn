@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3alpqv1r6n81"]
+
+[ext_resource type="PackedScene" uid="uid://c3kj77t5knhwo" path="res://scenes/testBlock.tscn" id="1_ho25e"]
+[ext_resource type="PackedScene" uid="uid://wsdgt3vitjlt" path="res://scenes/player.tscn" id="2_l73j2"]
+[ext_resource type="PackedScene" uid="uid://nupbasypqutb" path="res://scenes/bosses/rosa.tscn" id="3_ejjpn"]
+[ext_resource type="PackedScene" uid="uid://bkgbqhiacf062" path="res://scenes/boss_attacks/ball.tscn" id="4_aod1g"]
+[ext_resource type="PackedScene" uid="uid://b028jvly7xwub" path="res://scenes/ballColBlock.tscn" id="5_r8i0b"]
+
+[node name="bosstestArena" type="Node2D"]
+
+[node name="testBlock" parent="." instance=ExtResource("1_ho25e")]
+position = Vector2(-335, 7)
+scale = Vector2(18.6, 1)
+
+[node name="testBlock2" parent="." instance=ExtResource("1_ho25e")]
+position = Vector2(-335, -232)
+scale = Vector2(18.6, 1)
+
+[node name="testBlock3" parent="." instance=ExtResource("1_ho25e")]
+position = Vector2(-65, -490)
+rotation = 1.57079
+scale = Vector2(18.6, 1)
+
+[node name="testBlock4" parent="." instance=ExtResource("1_ho25e")]
+position = Vector2(395, -490)
+rotation = 1.57079
+scale = Vector2(18.6, 1)
+
+[node name="player" parent="." instance=ExtResource("2_l73j2")]
+position = Vector2(-21, -14)
+
+[node name="rosa" parent="." instance=ExtResource("3_ejjpn")]
+position = Vector2(296, -33)
+
+[node name="rosaMarkerInitialPos" type="Marker2D" parent="."]
+position = Vector2(52, 7)
+
+[node name="ball2" parent="." instance=ExtResource("4_aod1g")]
+position = Vector2(199, -169)
+
+[node name="testBlock5" parent="." instance=ExtResource("5_r8i0b")]
+position = Vector2(-104, 7)
+scale = Vector2(14, 1)
+
+[node name="testBlock6" parent="." instance=ExtResource("5_r8i0b")]
+position = Vector2(-104, -232)
+scale = Vector2(14, 1)
+
+[node name="testBlock7" parent="." instance=ExtResource("5_r8i0b")]
+position = Vector2(-64, -232)
+rotation = 1.57079
+scale = Vector2(14, 1)
+
+[node name="testBlock8" parent="." instance=ExtResource("5_r8i0b")]
+position = Vector2(395, -232)
+rotation = 1.57079
+scale = Vector2(14, 1)

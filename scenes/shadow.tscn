@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj5ce52i67vyq"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1cmfy"]
+
+[node name="shadow" type="Sprite2D"]
+modulate = Color(0, 0, 0, 0.388235)
+visibility_layer = 513
+material = SubResource("CanvasItemMaterial_1cmfy")

@@ -1,0 +1,10 @@
+[
+	{"CharacterLeft":"Shura", "CharacterRight":"Froo"},
+	{"Name":"Froo", "SecondaryName": "Karu", "SecondaryOffset" : "0", "Text":"Hey, gracias por encontrar a Karu!", "Emotion": "Happy", "Side": "Right-second"},
+	{"Name":"Froo", "SecondaryName": "Karu", "SecondaryOffset" : "0", "Text":"Ahora solo nos falta encontrar la forma de salir de este lugar...", "Emotion": "Happy", "Side": "Right-second"},
+	{"Name":"Shura", "SecondaryName": "","Text":"¿No son de aquí?", "Emotion": "Normal", "Side": "Left"},
+	{"Name":"Froo", "SecondaryName": "Karu", "SecondaryOffset" : "0", "Text":"Un portal apareció frente a nosotras y terminamos aquí.", "Emotion": "Happy", "Side": "Right-second"},
+	{"Name":"Shura", "SecondaryName": "","Text":"Oh...", "Emotion": "Normal", "Side": "Left"},
+	{"Name":"Shura", "SecondaryName": "","Text":"Pues que tengan suerte, creo que no las puedo ayudar con eso...", "Emotion": "Normal", "Side": "Left"},
+	{"Name":"Froo", "SecondaryName": "Karu", "SecondaryOffset" : "0", "Text":"No te apures.", "Emotion": "Happy", "Side": "Right-second"},
+]

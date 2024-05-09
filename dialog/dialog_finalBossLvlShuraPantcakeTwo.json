@@ -1,0 +1,18 @@
+[
+  { "CharacterLeft": "Shura", "CharacterRight": "Pantcake" },
+  {
+    "Name": "Pantcake",
+    "SecondaryName": "",
+    "Text": "¡S-Shura, este lugar se va a derrumbar, tenemos que irnos de aquí!",
+    "Emotion": "Scared",
+    "Side": "Right"
+  },
+  {
+    "Name": "Shura",
+    "SecondaryName": "",
+    "Text": "No hay tiempo que perder, ¡sé donde está la salida, sigueme!",
+    "Emotion": "Normal",
+    "Side": "Left"
+  }
+]
+

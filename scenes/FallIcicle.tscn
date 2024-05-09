@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://b7h80jm2l7joa"]
+
+[ext_resource type="Texture2D" uid="uid://dculorkgpve4w" path="res://sprites/obstacles/fallingIcicle.png" id="1_hqlcj"]
+[ext_resource type="Script" path="res://scripts/FallIcicle.gd" id="1_ne7g6"]
+[ext_resource type="AudioStream" uid="uid://b8syjdajya0oe" path="res://sounds/obstacles/blockBreak.wav" id="2_bo4fm"]
+[ext_resource type="Texture2D" uid="uid://dnt0tl1re4rko" path="res://sprites/obstacles/debris.png" id="4_ad027"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfhby"]
+atlas = ExtResource("1_hqlcj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yg4w7"]
+atlas = ExtResource("1_hqlcj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpbeu"]
+atlas = ExtResource("1_hqlcj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rbnl"]
+atlas = ExtResource("1_hqlcj")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ghuc6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfhby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yg4w7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpbeu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rbnl")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcoww"]
+size = Vector2(20, 40)
+
+[node name="FallIcicle" type="Node2D"]
+script = ExtResource("1_ne7g6")
+
+[node name="FallingIcicle" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ghuc6")
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="FallingIcicle"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingIcicle/Area2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_kcoww")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 700)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_bo4fm")
+volume_db = 2.0
+max_distance = 800.0
+bus = &"Sound"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 12
+lifetime = 0.3
+one_shot = true
+speed_scale = 0.5
+explosiveness = 1.0
+randomness = 0.95
+lifetime_randomness = 1.0
+texture = ExtResource("4_ad027")
+emission_shape = 1
+emission_sphere_radius = 0.01
+direction = Vector2(1, -2)
+spread = 168.22
+initial_velocity_min = 112.14
+initial_velocity_max = 289.71
+scale_amount_min = 0.2
+scale_amount_max = 1.2
+color = Color(0, 1, 1, 1)
+
+[connection signal="body_entered" from="FallingIcicle/Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,11 @@
+[
+	{"CharacterLeft":"Shura", "CharacterRight":"Rosa"},
+	{"Name":"Rosa", "SecondaryName": "","Text":"¡Alto ahí!", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Shura", "SecondaryName": "","Text":"¿Y ustedes?", "Emotion": "Normal", "Side": "Left"},
+	{"Name":"Rosa", "SecondaryName": "","Text":"¡Me llamo Rosa, fui contratada por un calvo llamado Haise para capturar a una tal Mini Chuwa!", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Rosa", "SecondaryName": "","Text":"No sé si tu seas ella, pero te pareces lo suficente.", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Celeste", "SecondaryName": "","Text":"Pero no te olvides de mi, ¡Yo me llamo Celeste! Así que prepárate...", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Rosa", "SecondaryName": "", "Text":"Porque juntas somos...", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Rosa", "SecondaryName": "Celeste", "SecondaryOffset" : "40", "Text":"¡Las Creaturas!", "Emotion": "Normal", "Side": "Right-second"},
+	{"Name":"Shura", "SecondaryName": "","Text":"Ay, Dios...", "Emotion": "Cringe", "Side": "Left"},
+]

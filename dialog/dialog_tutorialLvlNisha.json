@@ -1,0 +1,11 @@
+[
+	{"CharacterLeft":"Shura", "CharacterRight":"Nisha"},
+	{"Name":"Nisha", "SecondaryName": "","Text":"¡¡¡Chuwa!!!", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Shura", "SecondaryName": "","Text":"¡Hola Nisha!", "Emotion": "Happy", "Side": "Left"},
+	{"Name":"Nisha", "SecondaryName": "","Text":"Solo quería recordarte que si te encuentras en apuros durante una pelea, ¡estaré ahí para protegerte!", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Nisha", "SecondaryName": "","Text":"LLamame con [S] y te proporcionaré un escudo que te protegerá de todo tipo de ataques!", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Nisha", "SecondaryName": "","Text":"Pero recuerda que mi escudo no es 100% invencible, si un ataque es demasiado fuerte, se romperá.", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Nisha", "SecondaryName": "","Text":"Pero aún así, puede que el escudo te protega al menos un poco del daño, así que, ¡intenta usarlo igualmente!", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Shura", "SecondaryName": "","Text":"¡Muchas gracias, Nisha!", "Emotion": "Happy", "Side": "Left"},
+	{"Name":"Nisha", "SecondaryName": "","Text":"¡De nada, nos vemos!", "Emotion": "Normal", "Side": "Right"},
+]

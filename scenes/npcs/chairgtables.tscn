@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://rt2wjxol0xu"]
+
+[ext_resource type="Script" path="res://scripts/froo.gd" id="1_5gmem"]
+[ext_resource type="Texture2D" uid="uid://b7jupq4ii6h35" path="res://sprites/chairgtables/spr_chairgtables.png" id="2_3xhu0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x5w0"]
+atlas = ExtResource("2_3xhu0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yl4rr"]
+atlas = ExtResource("2_3xhu0")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbnoi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x5w0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yl4rr")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47gdg"]
+size = Vector2(22, 10)
+
+[node name="chairgtables" type="Node2D"]
+script = ExtResource("1_5gmem")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 27)
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_mbnoi")
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-11, 27)
+shape = SubResource("RectangleShape2D_47gdg")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

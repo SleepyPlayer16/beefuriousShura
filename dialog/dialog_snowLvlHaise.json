@@ -1,0 +1,45 @@
+[
+  { "CharacterLeft": "Shura", "CharacterRight": "Haise" },
+  {
+	"Name": "Haise",
+	"SecondaryName": "",
+	"Text": "Jeje, hola Shura...",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "¿De qué te ries calvo?",
+	"Emotion": "Cringe",
+	"Side": "Left"
+  },
+  {
+	"Name": "Haise",
+	"SecondaryName": "",
+	"Text": "¡¡Que no estoy calvo!!",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "Más vale que no estés planeando nada sospechoso...",
+	"Emotion": "Normal",
+	"Side": "Left"
+  },
+  {
+	"Name": "Haise",
+	"SecondaryName": "",
+	"Text": "No no no no no no...",
+	"Emotion": "Normal",
+	"Side": "Right"
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "...",
+	"Emotion": "Normal",
+	"Side": "Left"
+  }
+]

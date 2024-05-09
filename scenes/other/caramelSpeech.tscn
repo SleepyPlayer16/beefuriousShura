@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://4rs3qotsdd1u"]
+
+[ext_resource type="Script" path="res://scripts/caramelSpeech.gd" id="1_aui5g"]
+[ext_resource type="FontFile" uid="uid://bhhdifxwdyq0" path="res://fonts/DigitalDisco.ttf" id="1_mnl70"]
+
+[node name="CaramelSpeech" type="Node2D"]
+script = ExtResource("1_aui5g")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 975.0
+offset_bottom = 580.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+offset_top = 224.0
+offset_right = 960.0
+offset_bottom = 395.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_mnl70")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center][shake rate=20.0 level=5 connected=1] Lograste derrotarme...[/shake][/center]"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

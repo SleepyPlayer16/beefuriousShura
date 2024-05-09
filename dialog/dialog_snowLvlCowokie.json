@@ -1,0 +1,10 @@
+[
+	{"CharacterLeft":"Shura", "CharacterRight":"Cowokie"},
+	{"Name":"Cowokie", "SecondaryName": "","Text":"Hmm...", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Cowokie", "SecondaryName": "","Text":"Cuidado con las tipas que viven aquí, lo más probable es que te busquen pelea.", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Cowokie", "SecondaryName": "","Text":"Te recomiendo cuidarte de la tipa de azul.", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Cowokie", "SecondaryName": "","Text":"Tiene un ataque muy poderoso que es casi imposible de esquivar.", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Cowokie", "SecondaryName": "","Text":"Si tienes un escudo, recomiendo que lo guardes para ese ataque y esquives los demás.", "Emotion": "Normal", "Side": "Right"},
+	{"Name":"Shura", "SecondaryName": "", "Text":"...¿Una galleta que habla?", "Emotion": "Normal", "Side": "Left"},
+	{"Name":"Shura", "SecondaryName": "", "Text":"Eh, gracias, ¡lo tendré en mente!", "Emotion": "Normal", "Side": "Left"},
+]
